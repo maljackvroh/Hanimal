@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>HANIMAL</title>
+    <style>
+      .table-container {
+        background-color: #cfe8f0;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+        background-color: #ffffff;
+      }
+      th,
+      td {
+        padding: 15px;
+        border: 1px solid #cccccc;
+      }
+      th {
+        background-color: #89c4f4;
+      }
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      tr:hover {
+        background-color: #e0f7fa;
+      }
+      .header-row {
+        background-color: #cfe8f0;
+        font-weight: bold;
+      }
+      .center-text {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav__bar">
+      <div class="logo">
+        <img src="image\logo-hanimal.png" alt="" />
+      </div>
+
+      <ul class="navbar">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="pelayanan.html">Pelayanan</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="tentang-kami.html">Tentang Kami</a></li>
+        <li><a href="login.html">Log in</a></li>
+        <li><a href="#Contact">EN</a></li>
+      </ul>
+
+      <div id="menu__btn" class="fas fa-bars"></div>
+    </nav>
+    <hr />
+    <div class="table-container">
+      <h2>Tarif Tindakan Medis Dokter Hewan</h2>
+      <table>
+        <tr class="header-row">
+          <th>Nama Prosedur</th>
+          <th class="center-text">Harga (Rp)</th>
+        </tr>
+        <tr>
+          <td>Vaksinasi semua jenis hewan</td>
+          <td class="center-text">Rp 40.000</td>
+        </tr>
+        <tr>
+          <td>Diagnosa kebuntingan</td>
+          <td class="center-text">Rp 30.000</td>
+        </tr>
+        <tr>
+          <td>Pemasangan infus</td>
+          <td class="center-text">Rp 20.000</td>
+        </tr>
+        <tr>
+          <td>Suntik scabies</td>
+          <td class="center-text">Rp 30.000</td>
+        </tr>
+        <tr>
+          <td>Pemeriksaan Kesehatan rutin pada semua jenis hewan</td>
+          <td class="center-text">Rp 70.000</td>
+        </tr>
+        <tr>
+          <td>Cateter kucing</td>
+          <td class="center-text">Rp 40.000</td>
+        </tr>
+        <tr>
+          <td>Konsultasi dokter</td>
+          <td class="center-text">Rp 20.000</td>
+        </tr>
+        <tr>
+          <td>Pemeriksaan reproduksi (USG)</td>
+          <td class="center-text">Rp 50.000</td>
+        </tr>
+        <tr>
+          <td>Abdominocentesis</td>
+          <td class="center-text">Rp 70.000</td>
+        </tr>
+        <tr>
+          <td>Othemtaoma</td>
+          <td class="center-text">Rp 120.000</td>
+        </tr>
+      </table>
+    </div>
+    <!-- 
+   <div class="tarif">
+    <h2></h2>
+   </div> -->
+
+    <script src="script.js"></script>
+  </body>
+</html>
