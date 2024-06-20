@@ -22,13 +22,13 @@
           <img src="image\line.png" alt="" />
         </div>
         <h2>Login Dokter Hewan</h2>
-        <form action="insert.php" class="login-form">
-          <label for="inputUsername">Username</label>
-          <input type="text" id="inputUsername" name="username" />
-          <label for="inputPwd">Password</label>
-          <input type="password" id="inputPwd" name="pwd" />
+        <form id='login-form'>
+          <label for="username">Username</label>
+          <input type="text" id="username " name="username" required />
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" />
           <a href="#">Lupa Password?</a>
-          <button type="submit" value="login">Log In</button>
+          <button type="submit">Log In</button>
           <p>Belum memiliki akun?<br>Daftar dengan klik link dibawah ini!</p>
         </form>
         <div class="sign-up">
@@ -38,6 +38,6 @@
       </div>
     </section>
 
-    <script src="script.js"></script>
+    <script src="script/login.js"></script>
   </body>
 </html>
