@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login Admin</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -11,7 +11,7 @@
         <div class="login-box">
             <img src="images/logo-hanimal.png" alt="Healthy Animal" class="logo">
             <h1>Login Doktor</h1>
-            <form action="/login_doctor" method="POST">
+            <form action="/admin_login" method="POST">
                 <div>
                     <label for="username">Username:</label>
                     <input type="text" id="username" name="username" required>
@@ -22,8 +22,6 @@
                 </div>
                 <button type="submit">Login</button>
             </form>
-            <p>Belum memiliki akun? Daftar dengan klik link dibawah ini!</p>
-            <a href="/users/add">Sign Up</a>
         </div>
     </div>
 </body>

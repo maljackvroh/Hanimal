@@ -1,6 +1,6 @@
 import { Sequelize } from "sequelize";
 import db from "../config/database.js";
-
+import bcrypt from "bcrypt";
 const {DataTypes} = Sequelize;
 
 const Doctor = db.define('doctors', {
@@ -86,12 +86,29 @@ const Doctor = db.define('doctors', {
         allowNull: true
     },
 },{
-    freezeTableName:true
+    freezeTableName:true,
+    hooks: {
+        beforeCreate: async (doctor) => {
+            const salt = await bcrypt.genSalt(10);
+            doctor.password = await bcrypt.hash(doctor.password, salt);
+        },
+        beforeUpdate: async (doctor) => {
+            if (doctor.changed('password')) {
+                const salt = await bcrypt.genSalt(10);
+                doctor.password = await bcrypt.hash(doctor.password, salt);
+            }
+        }
+    }
 })
 
 
 export default Doctor;
 
 (async()=>{
-    await db.sync();
+    try {
+        await db.sync();
+        console.log("DB Sync");
+    } catch (error) {
+        console.error("Error sync: "+error);
+    }
 })();

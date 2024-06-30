@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        /* Styling for the edit panel */
+        .edit-panel {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f0f0f0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .edit-panel.active {
+            display: block;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        td.actions {
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+
+    <!-- Users Table -->
+    <h2>Users List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Gender</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Example rows, replace with dynamic data -->
+            <tr>
+                <td>User 1</td>
+                <td>user1@example.com</td>
+                <td>Male</td>
+                <td class="actions">
+                    <button onclick="toggleEditPanel('user1')">Edit</button>
+                    <button>Delete</button>
+                    <div class="edit-panel" id="editPanel_user1">
+                        <h2>Edit User</h2>
+                        <form>
+                            <label for="editUsername_user1">Name:</label>
+                            <input type="text" id="editUsername_user1" value="User 1" required><br>
+                            <label for="editEmail_user1">Email:</label>
+                            <input type="email" id="editEmail_user1" value="user1@example.com" required><br>
+                            <label for="editGender_user1">Gender:</label>
+                            <select id="editGender_user1" required>
+                                <option value="male" selected>Male</option>
+                                <option value="female">Female</option>
+                            </select><br>
+                            <button type="button" onclick="updateUser('user1')">Update</button>
+                            <button type="button" onclick="closeEditPanel('user1')">Close</button>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+            <!-- Example rows, replace with dynamic data -->
+            <tr>
+                <td>User 2</td>
+                <td>user2@example.com</td>
+                <td>Female</td>
+                <td class="actions">
+                    <button onclick="toggleEditPanel('user2')">Edit</button>
+                    <button>Delete</button>
+                    <div class="edit-panel" id="editPanel_user2">
+                        <h2>Edit User</h2>
+                        <form>
+                            <label for="editUsername_user2">Name:</label>
+                            <input type="text" id="editUsername_user2" value="User 2" required><br>
+                            <label for="editEmail_user2">Email:</label>
+                            <input type="email" id="editEmail_user2" value="user2@example.com" required><br>
+                            <label for="editGender_user2">Gender:</label>
+                            <select id="editGender_user2" required>
+                                <option value="male">Male</option>
+                                <option value="female" selected>Female</option>
+                            </select><br>
+                            <button type="button" onclick="updateUser('user2')">Update</button>
+                            <button type="button" onclick="closeEditPanel('user2')">Close</button>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Doctors Table -->
+    <h2>Doctors List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Specialization</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Example rows, replace with dynamic data -->
+            <tr>
+                <td>Doctor 1</td>
+                <td>doctor1@example.com</td>
+                <td>Cardiology</td>
+                <td class="actions">
+                    <button onclick="toggleEditPanel('doctor1')">Edit</button>
+                    <button>Delete</button>
+                    <div class="edit-panel" id="editPanel_doctor1">
+                        <h2>Edit Doctor</h2>
+                        <form>
+                            <label for="editUsername_doctor1">Name:</label>
+                            <input type="text" id="editUsername_doctor1" value="Doctor 1" required><br>
+                            <label for="editEmail_doctor1">Email:</label>
+                            <input type="email" id="editEmail_doctor1" value="doctor1@example.com" required><br>
+                            <label for="editSpecialization_doctor1">Specialization:</label>
+                            <input type="text" id="editSpecialization_doctor1" value="Cardiology" required><br>
+                            <button type="button" onclick="updateDoctor('doctor1')">Update</button>
+                            <button type="button" onclick="closeEditPanel('doctor1')">Close</button>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+            <!-- Example rows, replace with dynamic data -->
+            <tr>
+                <td>Doctor 2</td>
+                <td>doctor2@example.com</td>
+                <td>Neurology</td>
+                <td class="actions">
+                    <button onclick="toggleEditPanel('doctor2')">Edit</button>
+                    <button>Delete</button>
+                    <div class="edit-panel" id="editPanel_doctor2">
+                        <h2>Edit Doctor</h2>
+                        <form>
+                            <label for="editUsername_doctor2">Name:</label>
+                            <input type="text" id="editUsername_doctor2" value="Doctor 2" required><br>
+                            <label for="editEmail_doctor2">Email:</label>
+                            <input type="email" id="editEmail_doctor2" value="doctor2@example.com" required><br>
+                            <label for="editSpecialization_doctor2">Specialization:</label>
+                            <input type="text" id="editSpecialization_doctor2" value="Neurology" required><br>
+                            <button type="button" onclick="updateDoctor('doctor2')">Update</button>
+                            <button type="button" onclick="closeEditPanel('doctor2')">Close</button>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function toggleEditPanel(userId) {
+            const editPanel = document.getElementById('editPanel_' + userId);
+            editPanel.classList.toggle('active');
+        }
+
+        function closeEditPanel(userId) {
+            document.getElementById('editPanel_' + userId).classList.remove('active');
+        }
+
+        function updateUser(userId) {
+            const formData = new FormData(document.querySelector(`#editPanel_${userId} form`));
+            // Implement update logic using fetch or AJAX
+            console.log('Update user:', formData);
+            closeEditPanel(userId);
+        }
+
+        function updateDoctor(doctorId) {
+            const formData = new FormData(document.querySelector(`#editPanel_${doctorId} form`));
+            // Implement update logic using fetch or AJAX
+            console.log('Update doctor:', formData);
+            closeEditPanel(doctorId);
+        }
+    </script>
+</body>
+</html>

@@ -32,7 +32,6 @@ app.use(express.urlencoded({extended: true}));
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.urlencoded({extended: true}));
 
 // Mengatur view engine EJS
 app.set('view engine', 'ejs');
@@ -41,6 +40,7 @@ app.set('views', path.join(__dirname, 'views'));
 // Atur route
 app.use(DoctorRoute);
 app.use(UserRoute);
+app.use(AdminRoute);
 app.use(AuthRoute);
 
 
@@ -72,12 +72,14 @@ app.get('/home', (req, res) => {
     res.render('home');
 });
 
+app.use('/admin',)
+
 app.get('/', (req, res) => {
-    if (req.session.user){
-        res.render('home');
-    }else {
+    // if (req.session.user){
+    //     res.render('home');
+    // }else {
         res.render('homepage');
-    }
+    // }
 });
 
 app.listen(PORT, ()=> console.log(`server running on port ${PORT}...`));
