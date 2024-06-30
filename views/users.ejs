@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users List</title>
+    <style>
+        /* Styling for the edit panel */
+        .edit-panel {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f0f0f0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .edit-panel.active {
+            display: block;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        td.actions {
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>Users List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Gender</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% users.forEach(user => { %>
+                <tr>
+                    <td><%= user.username%></td>
+                    <td><%= user.email %></td>
+                    <td><%= user.gender %></td>
+                    <td class="actions">
+                        <!-- Button to toggle edit panel -->
+                        <button onclick="toggleEditPanel('<%= user.id %>')">Edit</button>
+                        <!-- Button to delete user -->
+                        <form action="/users/<%= user.id %>" method="POST" style="display: inline;">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit">Delete</button>
+                        </form>
+                        <!-- Edit Form -->
+                        <div class="edit-panel" id="editPanel_<%= user.id %>">
+                            <h2>Edit User</h2>
+                            <form action="/users/<%= user.id %>" method="POST" class="editForm">
+                                <input type="hidden" name="_method" value="PUT">
+                                <div>
+                                    <label for="editUsername_<%= user.id %>">Name:</label>
+                                    <input type="text" id="editUsername_<%= user.id %>" name="editUsername" value="<%= user.username %>" required>
+                                </div>
+                                <div>
+                                    <label for="editEmail_<%= user.id %>">Email:</label>
+                                    <input type="email" id="editEmail_<%= user.id %>" name="editEmail" value="<%= user.email %>" required>
+                                </div>
+                                <div>
+                                    <label for="editGender_<%= user.id %>">Gender:</label>
+                                    <select id="editGender_<%= user.id %>" name="editGender" required>
+                                        <option value="male" <%= user.gender === 'male' ? 'selected' : '' %>>Male</option>
+                                        <option value="female" <%= user.gender === 'female' ? 'selected' : '' %>>Female</option>
+                                    </select>
+                                </div>
+                                <button type="button" onclick="updateUser('<%= user.id %>')">Update</button>
+                                <button type="button" onclick="closeEditPanel('<%= user.id %>')">Close</button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+
+    <script>
+        function toggleEditPanel(userId) {
+            const editPanel = document.getElementById('editPanel_' + userId);
+            editPanel.classList.toggle('active');
+        }
+
+        function closeEditPanel(userId) {
+            document.getElementById('editPanel_' + userId).classList.remove('active');
+        }
+
+        function updateUser(userId) {
+            const formData = new FormData(document.querySelector(`#editPanel_${userId} .editForm`));
+
+            fetch(`/users/${userId}`, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.message);
+                closeEditPanel(userId); // Close edit panel after successful update
+                // Optionally, reload the page or update the user list
+            })
+            .catch(error => console.error('Error updating user:', error));
+        }
+    </script>
+</body>
+</html>

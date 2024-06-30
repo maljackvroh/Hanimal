@@ -1,0 +1,156 @@
+:root {
+    --clr-bm: #97d2f0; /* Light Blue */
+    --clr-am: #d9d9d9; /* Light Grey */
+    --clr-bt: #015478; /* Dark Blue */
+    --clr-at: #677483; /* Medium Grey */
+    --clr-ijo: #18ad00; /* Green */
+    --clr-wth: #ffffff; /* White */
+    --clr-blk: #000000; /* Black */
+    --clr-bord: #d0d0d0; /* Border Grey */
+    --clr-text: #666666; /* Text Grey */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--clr-wth);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* LOGIN PORTAL CONTAINER */
+portal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.login-box {
+    background: var(--clr-wth);
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 350px;
+    height: 400px;
+}
+
+.logo {
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--clr-bt);
+}
+
+p {
+    font-size: 14px;
+    color: var(--clr-text);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    background: var(--clr-am);
+    color: var(--clr-blk);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--clr-at);
+}
+
+.back-button {
+    background: var(--clr-ijo);
+    color: var(--clr-wth);
+}
+
+.back-button:hover {
+    background: var(--clr-bord);
+    color: var(--clr-blk);
+}
+
+
+/* LOGIN PORTAL CONTAINER */
+.loginu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.loginu-container login-box {
+    background: var(--clr-wth);
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 350px;
+    height: 400px;
+}
+
+.loginu-container logo {
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+.loginu-container h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--clr-bt);
+    padding-bottom: 10px;
+}
+
+.loginu-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Add gap between form elements */
+    width: 100%;
+}
+
+.loginu-container p {
+    font-size: 14px;
+    color: var(--clr-text);
+    margin-bottom: 20px;
+}
+
+/* .loginu-container a {
+    font-size: 14px;
+    color: var(--clr-text);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+} */
+
+.loginu-container button {
+    background: var(--clr-am);
+    color: var(--clr-blk);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.loginu-container button:hover {
+    background: var(--clr-ijo);
+    color: var(--clr-wth);
+}

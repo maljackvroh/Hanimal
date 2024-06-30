@@ -1,0 +1,38 @@
+###
+GET http://localhost:5000/doctor
+
+###
+GET http://localhost:5000/doctor/1
+
+###
+POST http://localhost:5000/doctor/
+Content-Type: application/json
+
+{
+    "username":"jack",
+    "password":"adsaf",
+    "email":"jacks@gmail.com",
+    "no_hp":"081238791",
+    "kabupaten":"Lobar",
+    "klinik":"Cahaya Mata",
+    "alamat":"Melur 3a",
+    "info":"Teman"
+}
+
+###
+PATCH  http://localhost:5000/doctor/1
+Content-Type: application/json
+
+{
+    "username":"juki",
+    "password":"jackas",
+    "email": "juki@gmail.com",
+    "no_hp": "081337871230",
+    "kabupaten": "Mataram",
+    "klinik": "Cahaya Ibu",
+    "alamat": "Melur 1a",
+    "info": "Teman"
+}
+
+###
+DELETE   http://localhost:5000/doctor/2
