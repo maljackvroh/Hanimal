@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Animal Payment Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 60%;
+            margin: auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 2px 2px 12px #aaa;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header img {
+            max-height: 50px;
+        }
+        .virtual-account {
+            background-color: #f7f7f7;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .tabs button {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+        .tabs button.active {
+            background-color: #ccc;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .instructions {
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <nav class="nav__bar">
+        <div class="logo">
+          <img src="images\logo-hanimal.png" alt="" />
+        </div>
+  
+        <ul class="navbar">
+          <li><a href="home">Beranda</a></li>
+          <li><a href="pelayanan">Pelayanan</a></li>
+          <li><a href="news">News</a></li>
+          <li><a href="aboutus">Tentang Kami</a></li>
+          <li><a href="login_portal">Log Out</a></li>
+        </ul>
+  
+        <div id="menu__btn" class="fas fa-bars"></div>
+      </nav>
+    <div class="virtual-account">
+        <h2>Virtual Account Number</h2>
+        <p>89301061200764546</p>
+        <h3>Nama Virtual Account</h3>
+        <p>Hanimal</p>
+        <h3>Nominal yang akan dibayarkan</h3>
+        <p>IDR 121,989</p>
+    </div>
+    <div class="tabs">
+        <button class="tab-link active" onclick="openTab(event, 'atm')">ATM</button>
+        <button class="tab-link" onclick="openTab(event, 'ibanking')">IBANKING</button>
+        <button class="tab-link" onclick="openTab(event, 'mbanking')">MBANKING</button>
+    </div>
+    <div id="atm" class="tab-content active">
+        <div class="instructions">
+            <h3>Detail Pembayaran via ATM</h3>
+            <ol>
+                <li>Pilih menu "Transfer"</li>
+                <li>Pilih menu "Virtual Account Billing"</li>
+                <li>Masukkan Nomor Virtual Account 89301061200764546</li>
+                <li>Lalu pilih rekening debit yang akan digunakan. Kemudian tekan "Lanjut"</li>
+                <li>Tagihan yang harus dibayarkan akan muncul pada layar konfirmasi</li>
+                <li>Masukkan Kode Otorisasi Token</li>
+            </ol>
+            <h4>Transaksi Berhasil</h4>
+            <p>1. Transaksi Anda telah selesai</p>
+            <p>2. Setelah transaksi anda selesai, invoice ini akan diupdate secara otomatis. Proses ini mungkin memakan waktu hingga 5 menit</p>
+        </div>
+    </div>
+    <div id="ibanking" class="tab-content">
+        <div class="instructions">
+            <h3>Detail Pembayaran via IBANKING</h3>
+            <ol>
+                <li>Buka situs <a href="https://ibank.bri.co.id">https://ibank.bri.co.id</a></li>
+                <li>Masukkan User ID dan Password</li>
+                <li>Pilih menu "Transfer"</li>
+                <li>Pilih menu "Virtual Account Billing"</li>
+                <li>Masukkan Nomor Virtual Account 89301061200764546</li>
+                <li>Lalu pilih rekening debit yang akan digunakan. Kemudian tekan "Lanjut"</li>
+                <li>Tagihan yang harus dibayarkan akan muncul pada layar konfirmasi</li>
+                <li>Masukkan Kode Otorisasi Token</li>
+            </ol>
+            <h4>Transaksi Berhasil</h4>
+            <p>1. Transaksi Anda telah selesai</p>
+            <p>2. Setelah transaksi anda selesai, invoice ini akan diupdate secara otomatis. Proses ini mungkin memakan waktu hingga 5 menit</p>
+        </div>
+    </div>
+    <div id="mbanking" class="tab-content">
+        <div class="instructions">
+            <h3>Detail Pembayaran via MBANKING</h3>
+            <ol>
+                <li>Buka aplikasi Mobile Banking BRI</li>
+                <li>Masukkan User ID dan Password</li>
+                <li>Pilih menu "Transfer"</li>
+                <li>Pilih menu "Virtual Account Billing"</li>
+                <li>Masukkan Nomor Virtual Account 89301061200764546</li>
+                <li>Lalu pilih rekening debit yang akan digunakan. Kemudian tekan "Lanjut"</li>
+                <li>Tagihan yang harus dibayarkan akan muncul pada layar konfirmasi</li>
+                <li>Masukkan Kode Otorisasi Token</li>
+            </ol>
+            <h4>Transaksi Berhasil</h4>
+            <p>1. Transaksi Anda telah selesai</p>
+            <p>2. Setelah transaksi anda selesai, invoice ini akan diupdate secara otomatis. Proses ini mungkin memakan waktu hingga 5 menit</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+            tabcontent[i].classList.remove("active");
+        }
+        tablinks = document.getElementsByClassName("tab-link");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        document.getElementById(tabName).classList.add("active");
+        evt.currentTarget.className += " active";
+    }
+</script>
+
+</body>
+</html>

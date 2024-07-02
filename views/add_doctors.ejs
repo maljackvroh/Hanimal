@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Dokter Hewan</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container-doctor">
+        <img src="logo.png" alt="Healthy Animal Logo" class="logo-doctor">
+        <h1>Sign up dokter hewan</h1>
+        <form action="/doctors/add" method="POST">
+            <div class="form-group-doctor">
+                <div class="input-group-doctor">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group-doctor">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+            </div>
+            <div class="form-group-doctor">
+                <div class="input-group-doctor">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group-doctor">
+                    <label for="no_hp">Nomor HP</label>
+                    <input type="text" id="no_hp" name="no_hp" required>
+                </div>
+            </div>
+            <div class="form-group-doctor">
+                <div class="input-group-doctor">
+                    <label for="kabupaten">Kabupaten/Kota</label>
+                    <input type="text" id="kabupaten" name="kabupaten" required>
+                </div>
+                <div class="input-group-doctor">
+                    <label for="klinik">Nama klinik tempat bekerja</label>
+                    <input type="text" id="klinik" name="klinik" required>
+                </div>
+            </div>
+            <div class="form-group-doctor">
+                <div class="input-group-doctor">
+                    <label for="alamat">Silahkan sertakan salah satu alamat anda (bisa rumah atau klinik)</label>
+                    <input type="text" id="alamat" name="alamat" required>
+                </div>
+                <div class="input-group-doctor">
+                    <label for="info">Dari mana anda mengetahui informasi terkait HANIMAL</label>
+                    <input type="text" id="info" name="info" required>
+                </div>
+            </div>
+            <!-- <div class="form-group-doctor">
+                <div class="input-group-doctor">
+                    <label for="sip">Bukti scan/foto SIP aktif</label>
+                    <input type="file" id="sip" name="sip" accept=".pdf,.doc,.docx" required>
+                </div>
+                <div class="input-group-doctor">
+                    <label for="strv">Bukti scan/foto STRV aktif</label>
+                    <input type="file" id="strv" name="strv" accept=".pdf,.doc,.docx" required>
+                </div>
+            </div> -->
+            <button type="submit">Sign Up</button>
+        </form>
+        <p class="login-link-doctor">Sudah punya akun? <a href="/login">Login</a></p>
+    </div>
+</body>
+</html>

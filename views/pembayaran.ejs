@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>HANIMAL</title>
+
+    
+  </head>
+
+  <body>
+    <nav class="nav__bar">
+      <div class="logo">
+        <img src="images\logo-hanimal.png" alt="" />
+      </div>
+
+      <ul class="navbar">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="pelayanan.html">Pelayanan</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="tentang-kami.html">Tentang Kami</a></li>
+        <li><a href="login.html">Log in</a></li>
+        <li><a href="#Contact">EN</a></li>
+      </ul>
+
+      <div id="menu__btn" class="fas fa-bars"></div>
+    </nav>
+    <hr />
+
+    <section id="pembayaran">
+      <div class="pembayaran">
+        <div class="container">
+          <h2>Pilih Pembayaran</h2>
+          <form action="#">
+            <input type="radio" name="payment" id="kredit" />
+            <input type="radio" name="payment" id="bri" />
+            <input type="radio" name="payment" id="dana" />
+            <input type="radio" name="payment" id="ovo" />
+            <input type="radio" name="payment" id="qris" />
+            <input type="radio" name="payment" id="cod" />
+            <div class="category">
+              <label for="kredit" class="kreditMethod">
+                <div class="imgName">
+                  <div class="imgContainer kredit">
+                    <img src="images\kredit.png" alt="" />
+                  </div>
+                  <span class="name">Kredit</span>
+                </div>
+                <span class="check"
+                  ><i
+                    class="fa-solid fa-circle-check"
+                    style="color: #015478"
+                  ></i
+                ></span>
+              </label>
+              <label for="bri" class="briMethod">
+                <div class="imgName">
+                  <div class="imgContainer bri">
+                    <img src="images\bri.png" alt="" />
+                  </div>
+                  <span class="name">BRI</span>
+                </div>
+                <span class="check"
+                  ><i
+                    class="fa-solid fa-circle-check"
+                    style="color: #015478"
+                  ></i
+                ></span>
+              </label>
+
+              <label for="dana" class="danaMethod">
+                <div class="imgName">
+                  <div class="imgContainer dana">
+                    <img src="images\dana.png" alt="" />
+                  </div>
+                  <span class="name">Dana</span>
+                </div>
+                <span class="check"
+                  ><i
+                    class="fa-solid fa-circle-check"
+                    style="color: #015478"
+                  ></i
+                ></span>
+              </label>
+
+              <label for="ovo" class="ovoMethod">
+                <div class="imgName">
+                  <div class="imgContainer ovo">
+                    <img src="images\ovo.png" alt="" />
+                  </div>
+                  <span class="name">Ovo</span>
+                </div>
+                <span class="check"
+                  ><i
+                    class="fa-solid fa-circle-check"
+                    style="color: #015478"
+                  ></i
+                ></span>
+              </label>
+
+              <label for="qris" class="qrisMethod">
+                <div class="imgName">
+                  <div class="imgContainer qris">
+                    <img src="images\qris.png" alt="" />
+                  </div>
+                  <span class="name">Qris</span>
+                </div>
+                <span class="check"
+                  ><i
+                    class="fa-solid fa-circle-check"
+                    style="color: #015478"
+                  ></i
+                ></span>
+              </label>
+
+              <label for="cod" class="codMethod">
+                <div class="imgName">
+                  <div class="imgContainer cod">
+                    <img src="images\cod.png" alt="" />
+                  </div>
+                  <span class="name">COD</span>
+                </div>
+                <span class="check"
+                  ><i
+                    class="fa-solid fa-circle-check"
+                    style="color: #015478"
+                  ></i
+                ></span>
+              </label>
+            </div>
+          </form>
+        </div>
+        <div class="invoice">
+          <h2>Invoice</h2>
+          <form action="insert.php" class="form-invoice">
+            <div class="row">
+              <div class="col-50">
+                <input type="text" name="name" placeholder="Nama Lengkap" />
+                <input
+                  type="text"
+                  name="animal_type"
+                  placeholder="Jenis Hewan Peliharaan/Hewan Ternak"
+                />
+                <input type="text" name="address" placeholder="Alamat" />
+              </div>
+              <div class="col-50">
+                <input type="number" name="age" placeholder="Umur" />
+                <input type="text" name="gender" placeholder="Jenis Kelamin" />
+                <input type="tel" name="phone" placeholder="Nomor Telepon" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-100">
+                <input
+                  type="text"
+                  name="medicine_cost"
+                  placeholder="Biaya Obat Rp"
+                />
+                <input
+                  type="text"
+                  name="admin_cost"
+                  placeholder="Biaya Administrasi Rp"
+                />
+                <input
+                  type="text"
+                  name="service_cost"
+                  placeholder="Biaya Pelayanan Rp"
+                />
+                <input
+                  type="text"
+                  name="travel_cost"
+                  placeholder="Biaya Perjalanan Rp"
+                />
+              </div>
+            </div>
+            <div class="total-line">
+              <span>Total</span>
+              <span>Rp 50.000</span>
+            </div>
+          </form>
+          <a href="pembayaran-atm.html">Buat Tagihan Pembayaran</a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
