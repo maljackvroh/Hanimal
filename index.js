@@ -40,16 +40,20 @@ app.set('views', path.join(__dirname, 'views'));
 // Atur route
 app.use(DoctorRoute);
 app.use(UserRoute);
-app.use(AdminRoute);
+// app.use(AdminRoute);
 app.use(AuthRoute);
 
 
-app.get('/users/add', (req, res) => {
-    res.render('add_user'); 
+// app.get('/users/add', (req, res) => {
+//     res.render('add_user'); 
+// });
+
+app.get('/aboutus', (req, res) => {
+    res.render('aboutus'); 
 });
 
-app.get('/doctor/add', (req, res) => {
-    res.render('add_doctor');
+app.get('/doctors/add', (req, res) => {
+    res.render('add_doctors');
 });
 
 app.get('/login_portal', (req, res) => {
@@ -60,9 +64,42 @@ app.get('/login_doctor', (req, res) => {
     res.render('login_doctor');
 });
 
+app.get('/admin_login', (req, res) => {
+    res.render('admin_login');
+});
+
 app.get('/login_user', (req, res) => {
     res.render('login_user');
 });
+
+app.get('/cara_bayar', (req, res) => {
+    res.render('cara_bayar');
+});
+
+app.get('/dashbord_admin', (req, res) => {
+    res.render('dashbord_admin');
+});
+
+app.get('/dashboard_doctor', (req, res) => {
+    res.render('dashboard_doctor');
+});
+
+app.get('/pelayanan', (req, res) => {
+    res.render('pelayanan');
+});
+
+app.get('/pembayaran', (req, res) => {
+    res.render('pembayaran');
+});
+
+app.get('/pesan', (req, res) => {
+    res.render('pesan');
+});
+
+app.get('/upload', (req, res) => {
+    res.render('upload');
+});
+
 
 app.get('/news', (req, res) => {
     res.render('news');
@@ -72,14 +109,9 @@ app.get('/home', (req, res) => {
     res.render('home');
 });
 
-app.use('/admin',)
 
 app.get('/', (req, res) => {
-    // if (req.session.user){
-    //     res.render('home');
-    // }else {
-        res.render('homepage');
-    // }
+    res.render('homepage');
 });
 
 app.listen(PORT, ()=> console.log(`server running on port ${PORT}...`));

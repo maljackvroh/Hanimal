@@ -135,7 +135,7 @@ hr {
   justify-content: space-between;
   height: 100%;
   width: 100%;
-  /* margin: 20px; */
+  margin: 20px;
 }
 .nav__bar-profil {
   display: flex;
@@ -160,14 +160,10 @@ hr {
   /* margin-top: 20px;*/
 }
 .profil-container .sidebar {
-  /* width: 260px; */
+  width: 260px;
   background-color: #ccdcee;
   height: 700px;
-  /* padding: 30px; */
-  /* display: flex; */
-  /* box-sizing: border-box; */
-  /* 
-  flex-direction: column; */
+  padding: 30px;
 }
 .profil-container .sidebar a {
   text-decoration: none;
@@ -177,7 +173,7 @@ hr {
 .profil-container .sidebar .header {
   background-color: var(--clr-ijo);
   color: var(--clr-wth);
-  margin-top: 70px;
+  margin-top: 20px;
   padding: 15px 40px;
 }
 .profil-container .sidebar .header .list-item a {
@@ -196,12 +192,7 @@ hr {
 .profil-container .sidebar .header .list-item-inactive {
   display: grid;
 }
-/* .profil-container .content{ */
-/* display: flex; */
-/* height: 100%;
-  width: 100%; */
-/* margin: 20px; */
-/* } */
+
 .main-content {
   /* grid-template-columns: repeat(2, 1fr);
   flex-grow: 1; */
@@ -224,18 +215,7 @@ hr {
 .main-content .profil-dokter li {
   list-style: none;
 }
-/* .main-content .biodata {
-  margin-top: 20px;
-} */
-/* .main-content .biodata table {
-  width: 100%;
-} */
-/* .main-content .biodata table td {
-  padding: 5px;
-} */
-/* .main-content .biodata table td:first-child {
-  font-weight: bold;
-} */
+
 /* -------------------------- Beranda Home ----------------------------- */
 .beranda {
   padding-top: 10px;
@@ -314,27 +294,6 @@ hr {
   border: none;
 }
 
-/* .beranda .beranda__first .search-container .search-options .option-btn.active {
-  background-color: blue;
-  color: var(--clr-blk);
-} */
-/* .beranda .beranda__first button {
-  padding: 0.6rem 1.9rem;
-  border: 2px solid var(--clr-bt);
-  border-radius: 0.5rem;
-  background: transparent;
-  margin: 2rem 0;
-}
-.beranda .beranda__first button:hover {
-  background: var(--clr-bt);
-  color: var(--clr-wth);
-}
-.beranda .beranda__second img {
-  width: 400px;
-  height: 400px;
-  margin-left: 5rem;
-} */
-
 /* ---------------------- Beranda Artikel ------------------------ */
 .beranda-artikel {
   background: url("image/artikel-1.png");
@@ -351,68 +310,7 @@ hr {
   font-size: 2rem;
 }
 /* ---------------------- Beranda Pelayanan ------------------------ */
-/* .beranda-pelayanan {
-  background: url("image/pelayanan-1.png");
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  padding: 8rem 0rem 9rem 5rem;
-} */
-/* .beranda-pelayanan .beranda__first {
-  padding-top: 0rem;
-}
-.beranda-pelayanan .beranda__first h4 {
-  padding: 1rem 1rem;
-  color: var(--clr-wth);
-  font-size: 2rem;
-} */
-/* .beranda-pelayanan .beranda__second{
-  padding: 1rem 45rem 0rem 0rem;
-} */
-/* .beranda-pelayanan .beranda__second input{
-  text-align: left;
-  border: 2px solid #D6D6D6;
-  border-radius: 0.5rem;
-  padding: 0.8rem 1rem;
-  margin: 0.4rem 1rem;
-  width: 94%;
-  color: var(--clr-blk);
-  background-color: #D6D6D6;
-} */
-/* .beranda-pelayanan .beranda__second {
-  text-align: center;
-  padding: 0rem 45rem 0rem 0rem;
-  grid-template-columns: repeat(2, 1fr);
-}
 
-.beranda-pelayanan .beranda__second input {
-  text-align: left;
-  display: block;
-  border: 2px solid #d6d6d6;
-  border-radius: 0.5rem;
-  padding: 0.8rem 1rem;
-  margin: 0.4rem 1rem;
-  width: 94%;
-  color: var(--clr-blk);
-  background-color: #d6d6d6;
-} */
-/* .beranda-pelayanan .beranda__second button {
-  text-align: center;
-  padding: 0.6rem 1.9rem;
-  border: 2px solid var(--clr-ijo);
-  border-radius: 0.5rem;
-  background: var(--clr-ijo);
-  margin: 1rem 0;
-  color: var(--clr-wth);
-} */
-/* .beranda-pelayanan .beranda__second button a {
-  color: var(--clr-blk);
-  text-decoration: none;
-} */
-/* .beranda-pelayanan .beranda__second button:hover {
-  border: 2px solid var(--clr-bt);
-  background: var(--clr-bt);
-  color: var(--clr-wth);
-} */
 /* ---------------------- Pelayanan Dokter ------------------------ */
 .pelayanan-dokter {
   background: var(--clr-wth);
@@ -445,10 +343,7 @@ hr {
   padding-bottom: 25px;
   color: var(--clr-bt);
 }
-/* search-section .breadcrumb a {
-  color: var(--clr-bt);
-  text-decoration: none;
-} */
+
 .breadcrumb-item {
   display: flex;
   align-items: center;
@@ -700,12 +595,7 @@ hr {
 }
 /* ---------------------- Dokter ------------------------ */
 .dokter {
-  /* background: var(--clr-wth);
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  padding: 5rem 3rem 4rem 3rem; */
   text-align: center;
-  /* gap: 1rem; */
 }
 .dokter p {
   padding: 1rem 21rem;
@@ -732,15 +622,7 @@ hr {
   color: var(--clr-ijo);
   text-decoration: none;
 }
-/* .dokter .dokter-beranda .dokter__one a,
-.dokter .dokter-beranda .dokter__two a,
-.dokter .dokter-beranda .dokter__three a,
-.dokter .dokter-beranda .dokter__four a {
-  font-size: 15px;
-  padding: 5px 35px 5px 35px;
-  color: var(--clr-ijo);
-  text-decoration: none;
-} */
+
 .dokter .dokter-beranda .dokter__one h2,
 .dokter .dokter-beranda .dokter__two h2,
 .dokter .dokter-beranda .dokter__three h2,

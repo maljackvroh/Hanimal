@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize";
 import db from "../config/database.js";
 import bcrypt from "bcrypt";
-const {DataTypes} = Sequelize;
+const { DataTypes } = Sequelize;
 
 const Doctor = db.define('doctors', {
     username: {
@@ -16,77 +16,69 @@ const Doctor = db.define('doctors', {
         type: DataTypes.STRING,
         allowNull: false
     },
-    no_hp:  {
+    no_hp: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    kabupaten:  {
+    kabupaten: {
         type: DataTypes.STRING,
-        allowNull: false
+        // allowNull: false
     },
-    klinik:  {
+    klinik: {
         type: DataTypes.STRING,
-        allowNull: false
+        // allowNull: false
     },
-    alamat:  {
+    alamat: {
         type: DataTypes.STRING,
-        allowNull: false
+        // allowNull: false
     },
-    info:  {
+    info: {
         type: DataTypes.STRING,
-        allowNull: false
-    }, 
-    sip:  {
-        type: DataTypes.STRING,
-        allowNull: false
+        // allowNull: false
     },
-    strv:  {
+    sip: {
         type: DataTypes.STRING,
-        allowNull: false
+        // allowNull: true
     },
-
-    // Non Optional Data
-    ttl:  {
+    strv: {
         type: DataTypes.STRING,
-        allowNull: true
+        // allowNull: true
     },
-
-    spesialis:  {
+    // Non-Optional Data
+    ttl: {
         type: DataTypes.STRING,
-        allowNull: true
+        // allowNull: true
     },
-
-    pendidikan:  {
+    spesialis: {
         type: DataTypes.STRING,
-        allowNull: true
+        // allowNull: true
     },
-
-    keanggotaan:  {
+    pendidikan: {
         type: DataTypes.STRING,
-        allowNull: true
+        // allowNull: true
     },
-
-    afiliasi:  {
+    keanggotaan: {
         type: DataTypes.STRING,
-        allowNull: true
+        // allowNull: true
     },
-
-    bahasaint:  {
+    afiliasi: {
         type: DataTypes.STRING,
-        allowNull: true
+        // allowNull: true
     },
-
-    bahasa:  {
+    bahasaint: {
         type: DataTypes.STRING,
-        allowNull: true
+        // allowNull: true
     },
-
-    perkenalan:  {
+    bahasa: {
         type: DataTypes.STRING,
-        allowNull: true
+        // allowNull: true
     },
-},{
-    freezeTableName:true,
+    perkenalan: {
+        type: DataTypes.STRING,
+        // allowNull: true
+    },
+}, {
+    freezeTableName: true,
     hooks: {
         beforeCreate: async (doctor) => {
             const salt = await bcrypt.genSalt(10);
@@ -99,16 +91,15 @@ const Doctor = db.define('doctors', {
             }
         }
     }
-})
-
+});
 
 export default Doctor;
 
-(async()=>{
+(async () => {
     try {
         await db.sync();
         console.log("DB Sync");
     } catch (error) {
-        console.error("Error sync: "+error);
+        console.error("Error sync: " + error);
     }
 })();

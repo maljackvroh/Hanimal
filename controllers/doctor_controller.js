@@ -2,100 +2,89 @@ import multer from "multer";
 import path from "path";
 import Doctor from "../models/doctor_model.js";
 
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, path.join(__dirname, '../public/uploads'));
-    },
-    filename: (req, file, cb) => {
-        cb(null, `${Date.now()}-${file.originalname}`);
-    }
-});
+// const storage = multer.diskStorage({
+//     destination: (req, file, cb) => {
+//         cb(null, path.join(__dirname, '../public/uploads'));
+//     },
+//     filename: (req, file, cb) => {
+//         cb(null, `${Date.now()}-${file.originalname}`);
+//     }
+// });
 
-const fileFilter = (req, file, cb) => {
-    // Hanya terima file dengan ekstensi .pdf
-    if (file.mimetype === 'application/pdf') {
-        cb(null, true);
-    } else {
-        cb(new Error('File harus dalam format PDF'), false);
-    }
-};
+// const fileFilter = (req, file, cb) => {
+//     // Hanya terima file dengan ekstensi yang sesuai
+//     if (file.mimetype === 'application/pdf' || file.mimetype === 'application/msword' || file.mimetype === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
+//         cb(null, true);
+//     } else {
+//         cb(new Error('File harus dalam format PDF atau DOC'), false);
+//     }
+// };
 
-const upload = multer({storage, fileFilter});
+// const upload = multer({ storage, fileFilter });
 
-export const uploadFile = upload.single('file');
+// export const uploadFiles = upload.fields([
+//     { name: 'sip', maxCount: 1 },
+//     { name: 'strv', maxCount: 1 }
+// ]);
 
-
-// Route untuk mengunggah file
-export const uploadPdf = async (req, res) => {
+export const getDoctors = async (req, res) => {
     try {
-        if (!req.file) {
-            return res.status(400).json({ message: 'File PDF diperlukan' });
-        }
-        const filePath = req.file.path;
-        // Simpan path file ke dalam database
-        await Doctor.update({ file_path: filePath }, {
-            where: { id: req.body.doctorId }
-        });
-        res.status(200).json({ message: 'File PDF uploaded successfully' });
+        const response = await Doctor.findAll();
+        res.status(200).json(response);
     } catch (error) {
-        console.error('Error uploading file:', error);
-        res.status(500).json({ message: 'Internal Server Error' });
+        console.log(error.message);
     }
 };
 
-export const getDoctors = async(req, res) =>{
+export const getDoctorsById = async (req, res) => {
     try {
-        const response = await User.findAll();
-        res.status(200).json(response);
-    } catch(error){
-        console.log(error.message);
-    }
-}
-
-export const getDoctorsById = async(req, res) =>{
-    try {
-        const response = await User.findOne({
-            where:{
+        const response = await Doctor.findOne({
+            where: {
                 id: req.params.id
             }
         });
         res.status(200).json(response);
-    } catch(error){
+    } catch (error) {
         console.log(error.message);
     }
-}
+};
 
-export const createDoctors = async(req, res) =>{
+export const createDoctors = async (req, res) => {
     try {
-        await User.create(req.body);
-        res.status(201).json({msg: "User Created"});
-    } catch(error){
+        const { username, password, email, no_hp, kabupaten, klinik, alamat, info } = req.body;
+        // const sip = req.files['sip'][0].path;
+        // const strv = req.files['strv'][0].path;
+
+        await Doctor.create(req.body);
+        res.redirect('/login_doctor');
+    } catch (error) {
         console.log(error.message);
+        return res.status(500).json({ msg: "Error creating doctor" });
     }
-}
+};
 
-export const updateDoctors = async(req, res) =>{
+export const updateDoctors = async (req, res) => {
     try {
-        await User.update(req.body,{
-            where:{
+        await Doctor.update(req.body, {
+            where: {
                 id: req.params.id
             }
         });
-        res.status(200).json({msg: "User Updated"});
-    } catch(error){
+        res.status(200).json({ msg: "Doctor Updated" });
+    } catch (error) {
         console.log(error.message);
     }
-}
+};
 
-export const deleteDoctors = async(req, res) =>{
+export const deleteDoctors = async (req, res) => {
     try {
-        await User.destroy({
-            where:{
+        await Doctor.destroy({
+            where: {
                 id: req.params.id
             }
         });
-        res.status(200).json({msg: "User Deleted"});
-    } catch(error){
+        res.status(200).json({ msg: "Doctor Deleted" });
+    } catch (error) {
         console.log(error.message);
     }
-}
+};
