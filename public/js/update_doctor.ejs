@@ -1,0 +1,50 @@
+const editBtn = document.getElementById('edit-btn');
+const saveChangesBtn = document.getElementById('save-changes-btn');
+const form = document.getElementById('doctor-form');
+
+editBtn.addEventListener('click', () => {
+    // Enable editing for all input fields
+    const inputs = form.querySelectorAll('input, textarea');
+    inputs.forEach((input) => {
+        input.readOnly = false;
+    });
+
+    // Hide edit button and show save changes button
+    editBtn.style.display = 'none';
+    saveChangesBtn.style.display = 'block';
+});
+
+saveChangesBtn.addEventListener('click', async () => {
+    // Get the updated values from the form
+    const formData = new FormData(form);
+    const updatedDoctor = {};
+    formData.forEach((value, key) => {
+        updatedDoctor[key] = value;
+    });
+
+    // Update the doctor data in the database
+    try {
+        const response = await fetch('/doctor/update', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(updatedDoctor),
+        });
+        const result = await response.json();
+        if (result.success) {
+            // Update the form with the new data
+            const inputs = form.querySelectorAll('input, textarea');
+            inputs.forEach((input)=> {
+                input.value = updatedDoctor[input.name];
+                input.readOnly = true;
+            });
+
+            // Hide save changes button and show edit button
+            saveChangesBtn.style.display = 'none';
+            editBtn.style.display = 'block';
+        } else {
+            console.error('Error updating doctor data:', result.error);
+        }
+    } catch (error) {
+        console.error('Error updating doctor data:', error);
+    }
+});

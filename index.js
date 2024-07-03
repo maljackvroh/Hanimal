@@ -4,6 +4,8 @@ import cors from "cors";
 import UserRoute from "./routes/user_routes.js";
 import DoctorRoute from "./routes/doctor_routes.js";
 import AuthRoute from "./routes/auth_routes.js";
+import adminDoctorRouter from "./admin/admin_doctor.js";
+import adminGeneralRouter from "./admin/admin_general.js";
 import session  from "express-session";
 import { fileURLToPath } from "url";
 
@@ -44,9 +46,8 @@ app.use(UserRoute);
 app.use(AuthRoute);
 
 
-// app.get('/users/add', (req, res) => {
-//     res.render('add_user'); 
-// });
+app.use(adminDoctorRouter);
+app.use(adminGeneralRouter);
 
 app.get('/aboutus', (req, res) => {
     res.render('aboutus'); 

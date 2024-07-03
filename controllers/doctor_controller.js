@@ -88,3 +88,24 @@ export const deleteDoctors = async (req, res) => {
         console.log(error.message);
     }
 };
+
+export const getDoctorProfile = async (req, res) => {
+    try {
+        const doctor = await Doctor.findOne({ where: { id: req.params.id } });
+        res.render('doctor_profile', { doctor });
+    } catch (error) {
+        console.log(error.message);
+    }
+};
+
+export const updateDoctorProfile = async (req, res) => {
+    try {
+        const updatedDoctor = req.body;
+        await Doctor.update(updatedDoctor, { where: { id: req.params.id } });
+        res.json({ success: true });
+    } catch (error) {
+        console.log(error.message);
+        res.json({ success: false, error: error.message });
+    }
+};
+

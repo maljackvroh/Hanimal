@@ -1,105 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doctor Dashboard</title>
-    <style>
-        /* Basic styling for the table */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        td.actions {
-            white-space: nowrap;
-        }
-    </style>
+    <title>Doctor Profile</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h1>Doctor Dashboard</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Doctor Name</th>
-                <th>Email</th>
-                <th>Specialization</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Example data (replace with dynamic data from backend) -->
-            <tr>
-                <td>Dr. John Doe</td>
-                <td>johndoe@example.com</td>
-                <td>Veterinary Medicine</td>
-                <td class="actions">
-                    <!-- Add buttons for actions like Edit, Delete, etc. -->
-                    <button onclick="toggleEditPanel('doctor1')">Edit</button>
-                    <form action="/doctors/doctor1" method="POST" style="display: inline;">
-                        <input type="hidden" name="_method" value="DELETE">
-                        <button type="submit">Delete</button>
-                    </form>
-                    <!-- Edit Form (similar structure as in previous example) -->
-                    <div class="edit-panel" id="editPanel_doctor1">
-                        <h2>Edit Doctor</h2>
-                        <form action="/doctors/doctor1" method="POST" class="editForm">
-                            <input type="hidden" name="_method" value="PUT">
-                            <div>
-                                <label for="editDoctorName_doctor1">Name:</label>
-                                <input type="text" id="editDoctorName_doctor1" name="editDoctorName" value="Dr. John Doe" required>
-                            </div>
-                            <div>
-                                <label for="editDoctorEmail_doctor1">Email:</label>
-                                <input type="email" id="editDoctorEmail_doctor1" name="editDoctorEmail" value="johndoe@example.com" required>
-                            </div>
-                            <div>
-                                <label for="editDoctorSpecialization_doctor1">Specialization:</label>
-                                <input type="text" id="editDoctorSpecialization_doctor1" name="editDoctorSpecialization" value="Veterinary Medicine" required>
-                            </div>
-                            <button type="button" onclick="updateDoctor('doctor1')">Update</button>
-                            <button type="button" onclick="closeEditPanel('doctor1')">Close</button>
-                        </form>
-                    </div>
-                </td>
-            </tr>
-            <!-- End of example data -->
-        </tbody>
-    </table>
+    <h1>Doctor Profile</h1>
+    <form id="doctor-form">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" value="<%= doctor.nama %>" readonly>
 
-    <script>
-        // JavaScript functions for toggling, updating, and closing edit panel
-        function toggleEditPanel(doctorId) {
-            const editPanel = document.getElementById('editPanel_' + doctorId);
-            editPanel.classList.toggle('active');
-        }
+        <label for="ttl">Tanggal Lahir:</label>
+        <input type="date" id="ttl" name="ttl" value="<%= doctor.ttl %>" readonly>
 
-        function closeEditPanel(doctorId) {
-            document.getElementById('editPanel_' + doctorId).classList.remove('active');
-        }
+        <label for="umur">Umur:</label>
+        <input type="number" id="umur" name="umur" value="<%= doctor.umur %>" readonly>
 
-        function updateDoctor(doctorId) {
-            const formData = new FormData(document.querySelector(`#editPanel_${doctorId} .editForm`));
+        <label for="alamat">Alamat:</label>
+        <textarea id="alamat" name="alamat" readonly><%= doctor.alamat %></textarea>
 
-            fetch(`/doctors/${doctorId}`, {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data.message);
-                closeEditPanel(doctorId); // Close edit panel after successful update
-                // Optionally, reload the page or update the doctor list
-            })
-            .catch(error => console.error('Error updating doctor:', error));
-        }
+        <label for="tempat_praktik">Tempat Praktik:</label>
+        <input type="text" id="tempat_praktik" name="tempat_praktik" value="<%= doctor.tempat_praktik %>" readonly>
+
+        <label for="spesialisasi">Spesialisasi:</label>
+        <input type="text" id="spesialisasi" name="spesialisasi" value="<%= doctor.spesialisasi %>" readonly>
+
+        <label for="pendidikan">Pendidikan:</label>
+        <input type="text" id="pendidikan" name="pendidikan" value="<%= doctor.pendidikan %>" readonly>
+
+        <label for="keanggotaan_profesional">Keanggotaan Profesional:</label>
+        <input type="text" id="keanggotaan_profesional" name="keanggotaan_profesional" value="<%= doctor.keanggotaan_profesional %>" readonly>
+
+        <label for="afiliasi_rumah_sakit">Afiliasi Rumah Sakit:</label>
+        <input type="text" id="afiliasi_rumah_sakit" name="afiliasi_rumah_sakit" value="<%= doctor.afiliasi_rumah_sakit %>" readonly>
+
+        <label for="bahasa_internasional">Bahasa Internasional:</label>
+        <input type="text" id="bahasa_internasional" name="bahasa_internasional" value="<%= doctor.bahasa_internasional %>" readonly>
+
+        <label for="bahasa_daerah">Bahasa Daerah:</label>
+        <input type="text" id="bahasa_daerah" name="bahasa_daerah" value="<%= doctor.bahasa_daerah %>" readonly>
+
+        <label for="perkenalan_singkat">Perkenalan Singkat:</label>
+        <textarea id="perkenalan_singkat" name="perkenalan_singkat" readonly><%= doctor.perkenalan_singkat %></textarea>
+
+        <button id="edit-btn">Edit</button>
+        <button id="save-changes-btn" style="display: none;">Save Changes</button>
+    </form>
+    <script src="../public/js/update_doctor.ejs">
+
     </script>
 </body>
 </html>
