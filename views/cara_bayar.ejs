@@ -1,85 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Healthy Animal Payment Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            width: 60%;
-            margin: auto;
-            border: 1px solid #ccc;
-            padding: 20px;
-            box-shadow: 2px 2px 12px #aaa;
-        }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .header img {
-            max-height: 50px;
-        }
-        .virtual-account {
-            background-color: #f7f7f7;
-            padding: 20px;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .tabs {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 20px;
-        }
-        .tabs button {
-            padding: 10px 20px;
-            cursor: pointer;
-            border: 1px solid #ccc;
-            background-color: #fff;
-        }
-        .tabs button.active {
-            background-color: #ccc;
-        }
-        .tab-content {
-            display: none;
-        }
-        .tab-content.active {
-            display: block;
-        }
-        .instructions {
-            padding: 20px;
-            background-color: #f9f9f9;
-        }
-    </style>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Cara Bayar</title>
+  </head>
 
-<div class="container">
-    <nav class="nav__bar">
-        <div class="logo">
-          <img src="images\logo-hanimal.png" alt="" />
-        </div>
+  <body>
+    <nav class="nav-bar">
+      <div class="logo">
+        <img src="images\logo-hanimal.png" alt="" />
+      </div>
   
-        <ul class="navbar">
-          <li><a href="home">Beranda</a></li>
-          <li><a href="pelayanan">Pelayanan</a></li>
-          <li><a href="news">News</a></li>
-          <li><a href="aboutus">Tentang Kami</a></li>
-          <li><a href="login_portal">Log Out</a></li>
-        </ul>
+      <ul class="nav-list">
+        <li><a href="home">Beranda</a></li>
+        <li><a href="pelayanan">Pelayanan</a></li>
+        <li><a href="news">News</a></li>
+        <li><a href="aboutus">Tentang Kami</a></li>
+        <li><a href="login_portal">Log Out</a></li>
+      </ul>
   
-        <div id="menu__btn" class="fas fa-bars"></div>
-      </nav>
+      <div id="menu__btn" class="fas fa-bars"></div>
+    </nav>
+
     <div class="virtual-account">
-        <h2>Virtual Account Number</h2>
-        <p>89301061200764546</p>
-        <h3>Nama Virtual Account</h3>
-        <p>Hanimal</p>
-        <h3>Nominal yang akan dibayarkan</h3>
-        <p>IDR 121,989</p>
+        <div class="virtual-account-text">
+            <h2>Virtual Account Number</h2>
+            <p>89301061200764546</p>
+            <h3>Nama Virtual Account</h3>
+            <p>Hanimal</p>
+            <h3>Nominal yang akan dibayarkan</h3>
+            <p>IDR 121,989</p>
+        </div>
+        <img src="images/bank-bri.png" alt="Bank Logo" />
     </div>
     <div class="tabs">
         <button class="tab-link active" onclick="openTab(event, 'atm')">ATM</button>
@@ -140,23 +102,6 @@
     </div>
 </div>
 
-<script>
-    function openTab(evt, tabName) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tab-content");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-            tabcontent[i].classList.remove("active");
-        }
-        tablinks = document.getElementsByClassName("tab-link");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-        document.getElementById(tabName).style.display = "block";
-        document.getElementById(tabName).classList.add("active");
-        evt.currentTarget.className += " active";
-    }
-</script>
-
+<script src="js/cara_bayar.js"></script>
 </body>
 </html>

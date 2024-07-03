@@ -4,11 +4,10 @@ import cors from "cors";
 import UserRoute from "./routes/user_routes.js";
 import DoctorRoute from "./routes/doctor_routes.js";
 import AuthRoute from "./routes/auth_routes.js";
-import adminDoctorRouter from "./admin/admin_doctor.js";
-import adminGeneralRouter from "./admin/admin_general.js";
+// import adminDoctorRouter from "./admin/admin_doctor.js";
+// import adminGeneralRouter from "./admin/admin_general.js";
 import session  from "express-session";
 import { fileURLToPath } from "url";
-
 
 const app = express();
 const PORT = 3000;
@@ -46,14 +45,14 @@ app.use(UserRoute);
 app.use(AuthRoute);
 
 
-app.use(adminDoctorRouter);
-app.use(adminGeneralRouter);
+// app.use(adminDoctorRouter);
+// app.use(adminGeneralRouter);
 
 app.get('/aboutus', (req, res) => {
     res.render('aboutus'); 
 });
 
-app.get('/doctors/add', (req, res) => {
+app.get('/add_doctor', (req, res) => {
     res.render('add_doctors');
 });
 
@@ -95,6 +94,10 @@ app.get('/pembayaran', (req, res) => {
 
 app.get('/pesan', (req, res) => {
     res.render('pesan');
+});
+
+app.get('/profile', (req, res) => {
+    res.render('profile');
 });
 
 app.get('/upload', (req, res) => {

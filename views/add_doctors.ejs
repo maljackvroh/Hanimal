@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up Dokter Hewan</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>SignUp Dokter</title>
+  </head>
+<body>       
     <div class="container-doctor">
-        <img src="logo.png" alt="Healthy Animal Logo" class="logo-doctor">
+        <img src="images\logo-hanimal.png" alt="Healthy Animal Logo" class="logo-doctor">
         <h1>Sign up dokter hewan</h1>
-        <form action="/doctors/add" method="POST">
+        <div class="divider"></div> <!-- Add divider here -->
+        <form action="/doctors/add" method="POST" enctype="multipart/form-data">
             <div class="form-group-doctor">
                 <div class="input-group-doctor">
                     <label for="username">Username</label>
@@ -51,7 +60,7 @@
                     <input type="text" id="info" name="info" required>
                 </div>
             </div>
-            <!-- <div class="form-group-doctor">
+            <div class="form-group-doctor">
                 <div class="input-group-doctor">
                     <label for="sip">Bukti scan/foto SIP aktif</label>
                     <input type="file" id="sip" name="sip" accept=".pdf,.doc,.docx" required>
@@ -60,10 +69,10 @@
                     <label for="strv">Bukti scan/foto STRV aktif</label>
                     <input type="file" id="strv" name="strv" accept=".pdf,.doc,.docx" required>
                 </div>
-            </div> -->
+            </div>
             <button type="submit">Sign Up</button>
         </form>
         <p class="login-link-doctor">Sudah punya akun? <a href="/login">Login</a></p>
-    </div>
+    </div>    
 </body>
 </html>

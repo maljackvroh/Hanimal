@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Animal Biodata</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .header {
+            background-color: #97d2f0;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            height: 80px; /* Sesuaikan ukuran header */
+        }
+
+        .header .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header .logout {
+            padding-right: 20px; /* Menambah padding kanan untuk logout */
+        }
+
+        .header .logout a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px; /* Menambah padding pada link logout */
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #97d2f0;
+            padding: 20px;
+            border-right: 1px solid #ddd;
+            height: calc(100vh - 80px); /* Sesuaikan dengan tinggi header */
+            position: fixed;
+            top: 100px; /* Sesuaikan dengan tinggi header */
+            left: 0;
+            color: #000;
+        }
+
+        .sidebar .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #000;
+            display: block;
+            padding: 10px;
+            font-weight: bold;
+            border: 1px solid transparent;
+        }
+
+        .sidebar a.active, .sidebar a:hover {
+            background-color: #18ad00;
+            color: #fff;
+            border-color: #18ad00;
+        }
+
+        .content {
+            padding: 20px;
+            margin-left: 220px;
+            margin-top: 160px; /* Menyesuaikan dengan posisi yang lebih rendah */
+            max-width: calc(100% - 240px); /* Sesuaikan dengan lebar sidebar */
+        }
+
+        .biodata, .penanganan, .rekam-medis {
+            display: none;
+        }
+
+        .biodata.active, .penanganan.active, .rekam-medis.active {
+            display: block;
+        }
+
+        dt {
+            font-weight: bold;
+            padding-top: 10px;
+        }
+
+        dd {
+            padding-bottom: 10px;
+            margin-left: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        thead {
+            background-color: #677483;
+            color: #000;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: #fff;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #d9d9d9;
+        }
+
+        button {
+            margin-right: 5px;
+            padding: 5px 10px;
+            background-color: #18ad00;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #128700;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="image.png" alt="Healthy Animal">
+        </div>
+        <div class="logout">
+            <a href="#">Logout</a>
+        </div>
+    </div>
+    <div class="sidebar">
+        <ul>
+            <li><a href="#" class="biodata-link active">Biodata</a></li>
+            <li><a href="#" class="penanganan-link">Penanganan & Tindak Lanjut</a></li>
+            <li><a href="#" class="rekam-medis-link">Rekam Medis</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="biodata active">
+            <dl>
+                <dt>Nama</dt>
+                <dd>Drh. Rizki Arya Janitra, Drh. Nadia Dini Yulianti</dd>
+                <dt>Tanggal lahir</dt>
+                <dd>Selasa, 12 September 1990</dd>
+                <dt>Umur</dt>
+                <dd>34 Tahun</dd>
+                <dt>Alamat</dt>
+                <dd>Repok Raden</dd>
+                <dt>Tempat Praktik</dt>
+                <dd>Klinik Kesehatan Hewan di Masbagik, RSU Daerah Drh. Rizki Arya Janitra</dd>
+                <dt>Spesialisasi</dt>
+                <dd>Umum</dd>
+                <dt>Pendidikan</dt>
+                <dd>Kedokteran - FK Malahayati Nusa Tenggara Barat</dd>
+                <dt>Keanggotaan Profesional</dt>
+                <dd>Ikatan Dokter Indonesia</dd>
+                <dt>Afiliasi Rumah Sakit</dt>
+                <dd>RSU Masbagik, Lombok Timur, Nusa Tenggara Barat</dd>
+                <dt>Bahasa Internasional</dt>
+                <dd>Indonesia</dd>
+                <dt>Bahasa Daerah</dt>
+                <dd>Lombok</dd>
+            </dl>
+        </div>
+    </div>
+
+    <script src="js/dashboard_doctor.js"></script>
+</body>
+</html>

@@ -1,53 +1,275 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Doctor Profile</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Animal Biodata</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .header {
+            background-color: #97d2f0;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            height: 80px; /* Sesuaikan ukuran header */
+        }
+
+        .header .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header .logout {
+            padding-right: 20px; /* Menambah padding kanan untuk logout */
+        }
+
+        .header .logout a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px; /* Menambah padding pada link logout */
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #97d2f0;
+            padding: 20px;
+            border-right: 1px solid #ddd;
+            height: calc(100vh - 80px); /* Sesuaikan dengan tinggi header */
+            position: fixed;
+            top: 100px; /* Sesuaikan dengan tinggi header */
+            left: 0;
+            color: #000;
+        }
+
+        .sidebar .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #000;
+            display: block;
+            padding: 10px;
+            font-weight: bold;
+            border: 1px solid transparent;
+        }
+
+        .sidebar a.active, .sidebar a:hover {
+            background-color: #18ad00;
+            color: #fff;
+            border-color: #18ad00;
+        }
+
+        .content {
+            padding: 20px;
+            margin-left: 220px;
+            margin-top: 160px; /* Menyesuaikan dengan posisi yang lebih rendah */
+            max-width: calc(100% - 240px); /* Sesuaikan dengan lebar sidebar */
+        }
+
+        .biodata, .penanganan, .rekam-medis {
+            display: none;
+        }
+
+        .biodata.active, .penanganan.active, .rekam-medis.active {
+            display: block;
+        }
+
+        dt {
+            font-weight: bold;
+            padding-top: 10px;
+        }
+
+        dd {
+            padding-bottom: 10px;
+            margin-left: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        thead {
+            background-color: #677483;
+            color: #000;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: #fff;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #d9d9d9;
+        }
+
+        button {
+            margin-right: 5px;
+            padding: 5px 10px;
+            background-color: #18ad00;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #128700;
+        }
+
+    </style>
 </head>
 <body>
-    <h1>Doctor Profile</h1>
-    <form id="doctor-form">
-        <label for="nama">Nama:</label>
-        <input type="text" id="nama" name="nama" value="<%= doctor.nama %>" readonly>
+    <div class="header">
+        <div class="logo">
+            <img src="image.png" alt="Healthy Animal">
+        </div>
+        <div class="logout">
+            <a href="#">Logout</a>
+        </div>
+    </div>
+    <div class="sidebar">
+        <ul>
+            <li><a href="#" class="biodata-link active">Biodata</a></li>
+            <li><a href="#" class="penanganan-link">Penanganan & Tindak Lanjut</a></li>
+            <li><a href="#" class="rekam-medis-link">Rekam Medis</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="biodata active">
+            <dl>
+                <dt>Nama</dt>
+                <dd>Drh. Rizki Arya Janitra, Drh. Nadia Dini Yulianti</dd>
+                <dt>Tanggal lahir</dt>
+                <dd>Selasa, 12 September 1990</dd>
+                <dt>Umur</dt>
+                <dd>34 Tahun</dd>
+                <dt>Alamat</dt>
+                <dd>Repok Raden</dd>
+                <dt>Tempat Praktik</dt>
+                <dd>Klinik Kesehatan Hewan di Masbagik, RSU Daerah Drh. Rizki Arya Janitra</dd>
+                <dt>Spesialisasi</dt>
+                <dd>Umum</dd>
+                <dt>Pendidikan</dt>
+                <dd>Kedokteran - FK Malahayati Nusa Tenggara Barat</dd>
+                <dt>Keanggotaan Profesional</dt>
+                <dd>Ikatan Dokter Indonesia</dd>
+                <dt>Afiliasi Rumah Sakit</dt>
+                <dd>RSU Masbagik, Lombok Timur, Nusa Tenggara Barat</dd>
+                <dt>Bahasa Internasional</dt>
+                <dd>Indonesia</dd>
+                <dt>Bahasa Daerah</dt>
+                <dd>Lombok</dd>
+            </dl>
+        </div>
+        <div class="penanganan">
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Unit Pelayanan</th>
+                        <th>Analisis dan Evaluasi Pencapaian Indikator Kerja</th>
+                        <th>Tindak Lanjut</th>
+                        <th>Hasil</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Unit A</td>
+                        <td>Evaluasi A</td>
+                        <td>Tindak Lanjut A</td>
+                        <td>Hasil A</td>
+                        <td>
+                            <button>Edit</button>
+                            <button>Hapus</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Unit B</td>
+                        <td>Evaluasi B</td>
+                        <td>Tindak Lanjut B</td>
+                        <td>Hasil B</td>
+                        <td>
+                            <button>Edit</button>
+                            <button>Hapus</button>
+                        </td>
+                    </tr>
+                    <!-- Tambahkan baris lain sesuai kebutuhan -->
+                </tbody>
+            </table>
+        </div>
+        <div class="rekam-medis">
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Unit Pelayanan</th>
+                        <th>Analisis dan Evaluasi Pencapaian Indikator Kerja</th>
+                        <th>Tindak Lanjut</th>
+                        <th>Hasil</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Unit A</td>
+                        <td>Evaluasi A</td>
+                        <td>Tindak Lanjut A</td>
+                        <td>Hasil A</td>
+                        <td>
+                            <button>Edit</button>
+                            <button>Hapus</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Unit B</td>
+                        <td>Evaluasi B</td>
+                        <td>Tindak Lanjut B</td>
+                        <td>Hasil B</td>
+                        <td>
+                            <button>Edit</button>
+                            <button>Hapus</button>
+                        </td>
+                    </tr>
+                    <!-- Tambahkan baris lain sesuai kebutuhan -->
+                </tbody>
+            </table>
+        </div>
+    </div>
 
-        <label for="ttl">Tanggal Lahir:</label>
-        <input type="date" id="ttl" name="ttl" value="<%= doctor.ttl %>" readonly>
-
-        <label for="umur">Umur:</label>
-        <input type="number" id="umur" name="umur" value="<%= doctor.umur %>" readonly>
-
-        <label for="alamat">Alamat:</label>
-        <textarea id="alamat" name="alamat" readonly><%= doctor.alamat %></textarea>
-
-        <label for="tempat_praktik">Tempat Praktik:</label>
-        <input type="text" id="tempat_praktik" name="tempat_praktik" value="<%= doctor.tempat_praktik %>" readonly>
-
-        <label for="spesialisasi">Spesialisasi:</label>
-        <input type="text" id="spesialisasi" name="spesialisasi" value="<%= doctor.spesialisasi %>" readonly>
-
-        <label for="pendidikan">Pendidikan:</label>
-        <input type="text" id="pendidikan" name="pendidikan" value="<%= doctor.pendidikan %>" readonly>
-
-        <label for="keanggotaan_profesional">Keanggotaan Profesional:</label>
-        <input type="text" id="keanggotaan_profesional" name="keanggotaan_profesional" value="<%= doctor.keanggotaan_profesional %>" readonly>
-
-        <label for="afiliasi_rumah_sakit">Afiliasi Rumah Sakit:</label>
-        <input type="text" id="afiliasi_rumah_sakit" name="afiliasi_rumah_sakit" value="<%= doctor.afiliasi_rumah_sakit %>" readonly>
-
-        <label for="bahasa_internasional">Bahasa Internasional:</label>
-        <input type="text" id="bahasa_internasional" name="bahasa_internasional" value="<%= doctor.bahasa_internasional %>" readonly>
-
-        <label for="bahasa_daerah">Bahasa Daerah:</label>
-        <input type="text" id="bahasa_daerah" name="bahasa_daerah" value="<%= doctor.bahasa_daerah %>" readonly>
-
-        <label for="perkenalan_singkat">Perkenalan Singkat:</label>
-        <textarea id="perkenalan_singkat" name="perkenalan_singkat" readonly><%= doctor.perkenalan_singkat %></textarea>
-
-        <button id="edit-btn">Edit</button>
-        <button id="save-changes-btn" style="display: none;">Save Changes</button>
-    </form>
-    <script src="../public/js/update_doctor.ejs">
-
-    </script>
+    <script src="js/dashboard_doctor.js"></script>
 </body>
 </html>

@@ -1,30 +1,47 @@
-  <%- include('./partial/header', { title: 'Pelayanan' }) %>  
-  
-  <!-- Search Section -->
-  <div class="search-section">
-    <nav aria-label="breadcrumb" class="breadcrumb-container">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index.html">Beranda</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Pelayanan</li>
-      </ol>
-    </nav>
-    <h1>Cari Dokter</h1>
-    <div class="search-container">
-      <i class="fa fa-search"></i>
-      <input
-        type="text"
-        placeholder="Ketik nama dokter atau gunakan filter"
-      />
-      
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelayanan</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<nav class="nav-bar">
+    <div class="logo">
+      <img src="images\logo-hanimal.png" alt="" />
     </div>
-    <button type="button">Filter</button>
+
+    <ul class="nav-list">
+      <li><a href="home">Beranda</a></li>
+      <li><a href="pelayanan">Pelayanan</a></li>
+      <li><a href="news">News</a></li>
+      <li><a href="aboutus">Tentang Kami</a></li>
+      <li><a href="login_portal">Log Out</a></li>
+    </ul>
+
+    <div id="menu__btn" class="fas fa-bars"></div>
+</nav>
+
+<div class="search-section">
+  <nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html">Beranda</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Pelayanan</li>
+    </ol>
+  </nav>
+  <h1>Cari Dokter</h1>
+  <div class="search-container">
+    <i class="fa fa-search"></i>
+    <input type="text" placeholder="Ketik nama dokter atau gunakan filter" />
   </div>
+  <button type="button">Filter</button>
+</div>
 
-    <div class="pelayanan-container" id="doctor-container">
-        <!-- Doctor cards will be injected here by JavaScript -->
-    </div>
+<div class="pelayanan-container" id="doctor-container">
+    <!-- Doctor cards will be injected here by JavaScript -->
+</div>
 
-    <script src="js/pelayanan-card.js">
-    </script>
+<script src="js/pelayanan-card.js"></script>
 </body>
 </html>

@@ -4,23 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Admin</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="loginu-container">
+    <div class="admin-login">
         <div class="login-box">
             <img src="images/logo-hanimal.png" alt="Healthy Animal" class="logo">
-            <h1>Login Doktor</h1>
+            <h1>Login Admin</h1>
             <form action="/admin_login" method="POST">
-                <div>
-                    <label for="username">Username:</label>
+                <div class="input-group">
+                    <label for="username">Username</label>
                     <input type="text" id="username" name="username" required>
                 </div>
-                <div>
-                    <label for="password">Password:</label>
+                <div class="input-group">
+                    <label for="password">Password</label>
                     <input type="password" id="password" name="password" required>
                 </div>
-                <button type="submit">Login</button>
+                <button type="submit" class="login-button">Login</button>
             </form>
         </div>
     </div>
