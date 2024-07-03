@@ -76,8 +76,8 @@ app.get('/cara_bayar', (req, res) => {
     res.render('cara_bayar');
 });
 
-app.get('/dashbord_admin', (req, res) => {
-    res.render('dashbord_admin');
+app.get('/dashboard_admin', (req, res) => {
+    res.render('dashboard_admin');
 });
 
 app.get('/dashboard_doctor', (req, res) => {

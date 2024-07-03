@@ -1,275 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Healthy Animal Biodata</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-        }
-
-        .header {
-            background-color: #97d2f0;
-            color: #fff;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            height: 80px; /* Sesuaikan ukuran header */
-        }
-
-        .header .logo {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .header .logout {
-            padding-right: 20px; /* Menambah padding kanan untuk logout */
-        }
-
-        .header .logout a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 5px 10px; /* Menambah padding pada link logout */
-        }
-
-        .sidebar {
-            width: 200px;
-            background-color: #97d2f0;
-            padding: 20px;
-            border-right: 1px solid #ddd;
-            height: calc(100vh - 80px); /* Sesuaikan dengan tinggi header */
-            position: fixed;
-            top: 100px; /* Sesuaikan dengan tinggi header */
-            left: 0;
-            color: #000;
-        }
-
-        .sidebar .logo {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .sidebar li {
-            margin-bottom: 10px;
-        }
-
-        .sidebar a {
-            text-decoration: none;
-            color: #000;
-            display: block;
-            padding: 10px;
-            font-weight: bold;
-            border: 1px solid transparent;
-        }
-
-        .sidebar a.active, .sidebar a:hover {
-            background-color: #18ad00;
-            color: #fff;
-            border-color: #18ad00;
-        }
-
-        .content {
-            padding: 20px;
-            margin-left: 220px;
-            margin-top: 160px; /* Menyesuaikan dengan posisi yang lebih rendah */
-            max-width: calc(100% - 240px); /* Sesuaikan dengan lebar sidebar */
-        }
-
-        .biodata, .penanganan, .rekam-medis {
-            display: none;
-        }
-
-        .biodata.active, .penanganan.active, .rekam-medis.active {
-            display: block;
-        }
-
-        dt {
-            font-weight: bold;
-            padding-top: 10px;
-        }
-
-        dd {
-            padding-bottom: 10px;
-            margin-left: 20px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        thead {
-            background-color: #677483;
-            color: #000;
-        }
-
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-
-        tbody tr:nth-child(odd) {
-            background-color: #fff;
-        }
-
-        tbody tr:nth-child(even) {
-            background-color: #d9d9d9;
-        }
-
-        button {
-            margin-right: 5px;
-            padding: 5px 10px;
-            background-color: #18ad00;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #128700;
-        }
-
-    </style>
-</head>
-<body>
-    <div class="header">
-        <div class="logo">
-            <img src="image.png" alt="Healthy Animal">
-        </div>
-        <div class="logout">
-            <a href="#">Logout</a>
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="ha-header">
+      <div class="ha-logo">
+        <img src="images\logo-hanimal.png" alt="Healthy Animal" />
+      </div>
+      <div class="ha-logout">
+        <a href="#">Logout</a>
+      </div>
     </div>
-    <div class="sidebar">
-        <ul>
-            <li><a href="#" class="biodata-link active">Biodata</a></li>
-            <li><a href="#" class="penanganan-link">Penanganan & Tindak Lanjut</a></li>
-            <li><a href="#" class="rekam-medis-link">Rekam Medis</a></li>
-        </ul>
+    <div class="ha-sidebar">
+      <ul>
+        <li><a href="#" class="ha-biodata-link">Biodata</a></li>
+        <li>
+          <a href="#" class="ha-penanganan-link">Tambah Laporan Penanganan & Tindak Lanjut</a>
+        </li>
+        <li>
+          <a href="#" class="ha-rekam-medis-link">Tambah Laporan Rekam Medis</a>
+        </li>
+      </ul>
     </div>
-    <div class="content">
-        <div class="biodata active">
-            <dl>
-                <dt>Nama</dt>
-                <dd>Drh. Rizki Arya Janitra, Drh. Nadia Dini Yulianti</dd>
-                <dt>Tanggal lahir</dt>
-                <dd>Selasa, 12 September 1990</dd>
-                <dt>Umur</dt>
-                <dd>34 Tahun</dd>
-                <dt>Alamat</dt>
-                <dd>Repok Raden</dd>
-                <dt>Tempat Praktik</dt>
-                <dd>Klinik Kesehatan Hewan di Masbagik, RSU Daerah Drh. Rizki Arya Janitra</dd>
-                <dt>Spesialisasi</dt>
-                <dd>Umum</dd>
-                <dt>Pendidikan</dt>
-                <dd>Kedokteran - FK Malahayati Nusa Tenggara Barat</dd>
-                <dt>Keanggotaan Profesional</dt>
-                <dd>Ikatan Dokter Indonesia</dd>
-                <dt>Afiliasi Rumah Sakit</dt>
-                <dd>RSU Masbagik, Lombok Timur, Nusa Tenggara Barat</dd>
-                <dt>Bahasa Internasional</dt>
-                <dd>Indonesia</dd>
-                <dt>Bahasa Daerah</dt>
-                <dd>Lombok</dd>
-            </dl>
-        </div>
-        <div class="penanganan">
-            <table>
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Unit Pelayanan</th>
-                        <th>Analisis dan Evaluasi Pencapaian Indikator Kerja</th>
-                        <th>Tindak Lanjut</th>
-                        <th>Hasil</th>
-                        <th>Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Unit A</td>
-                        <td>Evaluasi A</td>
-                        <td>Tindak Lanjut A</td>
-                        <td>Hasil A</td>
-                        <td>
-                            <button>Edit</button>
-                            <button>Hapus</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Unit B</td>
-                        <td>Evaluasi B</td>
-                        <td>Tindak Lanjut B</td>
-                        <td>Hasil B</td>
-                        <td>
-                            <button>Edit</button>
-                            <button>Hapus</button>
-                        </td>
-                    </tr>
-                    <!-- Tambahkan baris lain sesuai kebutuhan -->
-                </tbody>
-            </table>
-        </div>
-        <div class="rekam-medis">
-            <table>
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Unit Pelayanan</th>
-                        <th>Analisis dan Evaluasi Pencapaian Indikator Kerja</th>
-                        <th>Tindak Lanjut</th>
-                        <th>Hasil</th>
-                        <th>Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Unit A</td>
-                        <td>Evaluasi A</td>
-                        <td>Tindak Lanjut A</td>
-                        <td>Hasil A</td>
-                        <td>
-                            <button>Edit</button>
-                            <button>Hapus</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Unit B</td>
-                        <td>Evaluasi B</td>
-                        <td>Tindak Lanjut B</td>
-                        <td>Hasil B</td>
-                        <td>
-                            <button>Edit</button>
-                            <button>Hapus</button>
-                        </td>
-                    </tr>
-                    <!-- Tambahkan baris lain sesuai kebutuhan -->
-                </tbody>
-            </table>
-        </div>
+    <div class="ha-content">
+      <div class="ha-biodata">
+        <dl>
+          <dt>Nama</dt>
+          <dd>Drh. Rizki Arya Janitra, Drh. Nadia Dini Yulianti</dd>
+          <dt>Tanggal lahir</dt>
+          <dd>Selasa, 12 September 1990</dd>
+          <dt>Umur</dt>
+          <dd>34 Tahun</dd>
+          <dt>Alamat</dt>
+          <dd>Repok Raden</dd>
+          <dt>Tempat Praktik</dt>
+          <dd>
+            Klinik Kesehatan Hewan di Masbagik, RSU Daerah Drh. Rizki Arya
+            Janitra
+          </dd>
+          <dt>Spesialisasi</dt>
+          <dd>Umum</dd>
+          <dt>Pendidikan</dt>
+          <dd>Kedokteran - FK Malahayati Nusa Tenggara Barat</dd>
+          <dt>Keanggotaan Profesional</dt>
+          <dd>Ikatan Dokter Indonesia</dd>
+          <dt>Afiliasi Rumah Sakit</dt>
+          <dd>RSU Masbagik, Lombok Timur, Nusa Tenggara Barat</dd>
+          <dt>Bahasa Internasional</dt>
+          <dd>Indonesia</dd>
+          <dt>Bahasa Daerah</dt>
+          <dd>Lombok</dd>
+        </dl>
+      </div>
+      <div class="ha-penanganan active">
+        <button class="ha-button">Tambah Laporan</button>
+        <table class="ha-table">
+          <thead>
+            <tr>
+              <th>Tanggal</th>
+              <th>Keluhan</th>
+              <th>Diagnosa</th>
+              <th>Tindakan</th>
+              <th>Tindak Lanjut</th>
+              <th>Keterangan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>19 November 2022</td>
+              <td>Dilakukan operasi karena perut terkena infeksi serius</td>
+              <td>Perut berlubang, perut dibilas</td>
+              <td>Operasi, pemberian antibiotik</td>
+              <td>Perawatan di rumah, pengawasan ketat</td>
+              <td>Hewan menjadi sembuh dalam waktu cepat</td>
+            </tr>
+            <tr>
+              <td>23 Agustus 2023</td>
+              <td>Kucing tidak makan karena terkena flu burung</td>
+              <td>Diagnosis flu burung</td>
+              <td>Obat diteteskan di mata, memberikan makanan penambah nafsu makan</td>
+              <td>Diizinkan kembali setelah kucing makan dengan baik</td>
+              <td>Menghilangkan sakit dan sembuh dari flu burung</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ha-rekam-medis">
+        <button class="ha-button">Tambah Laporan</button>
+        <table class="ha-table">
+          <thead>
+            <tr>
+              <th>Tanggal</th>
+              <th>Keluhan</th>
+              <th>Diagnosa</th>
+              <th>Tindakan</th>
+              <th>Tindak Lanjut</th>
+              <th>Keterangan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>19 Januari 2023</td>
+              <td>Kucing muntah-muntah</td>
+              <td>Mual</td>
+              <td>Obat</td>
+              <td>Pemulihan</td>
+              <td>Muntah-muntah</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-
-    <script src="js/dashboard_doctor.js"></script>
-</body>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const url = window.location.href;
+        const activePage = url.substring(url.lastIndexOf('/') + 1);
+        
+        const sidebarLinks = document.querySelectorAll('.ha-sidebar a');
+        sidebarLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === activePage) {
+            link.classList.add('active');
+          }
+        });
+      });
+    </script>
+  </body>
 </html>

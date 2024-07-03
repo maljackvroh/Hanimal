@@ -220,9 +220,11 @@ hr {
 .beranda {
   padding-top: 10px;
   background: url("../images/beranda-1.png");
+  background-position: bottom;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding: 8rem 8rem 6.6rem 5rem;
+  /* padding-top: 130px; */
 }
 .beranda .beranda__first p {
   color: var(--clr-text);
