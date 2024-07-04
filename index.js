@@ -4,6 +4,7 @@ import cors from "cors";
 import UserRoute from "./routes/user_routes.js";
 import DoctorRoute from "./routes/doctor_routes.js";
 import AuthRoute from "./routes/auth_routes.js";
+import invoiceRoute from "./routes/invoice_routes.js";
 // import adminDoctorRouter from "./admin/admin_doctor.js";
 // import adminGeneralRouter from "./admin/admin_general.js";
 import session  from "express-session";
@@ -43,6 +44,7 @@ app.use(DoctorRoute);
 app.use(UserRoute);
 // app.use(AdminRoute);
 app.use(AuthRoute);
+app.use(invoiceRoute);
 
 
 // app.use(adminDoctorRouter);
@@ -108,6 +110,11 @@ app.get('/upload', (req, res) => {
 app.get('/news', (req, res) => {
     res.render('news');
 });
+
+app.get('/createPayment', (req, res) => {
+    res.render('resi')
+});
+  
 
 app.get('/home', (req, res) => {
     res.render('home');

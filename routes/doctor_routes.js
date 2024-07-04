@@ -30,6 +30,6 @@ router.get('/doctors', async (req, res) => {
 
 router.post('/signup', createDoctors, (req, res) => {
     res.redirect('/doctors');
-});
+}); 
 
 export default router;

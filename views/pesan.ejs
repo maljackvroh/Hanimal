@@ -1,192 +1,130 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Tarif Layanan Dokter Hewan</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>HANIMAL</title>
+  </head>
+  <body>
+    <nav class="nav-bar">
+      <div class="logo">
+        <img src="images\logo-hanimal.png" alt="" />
+      </div>
+  
+      <ul class="nav-list">
+        <li><a href="home">Beranda</a></li>
+        <li><a href="pelayanan">Pelayanan</a></li>
+        <li><a href="news">News</a></li>
+        <li><a href="aboutus">Tentang Kami</a></li>
+        <li><a href="login_portal">Log Out</a></li>
+      </ul>
+  
+      <div id="menu__btn" class="fas fa-bars"></div>
+    </nav>
 
-    header {
-      background-color: #007bff;
-      color: white;
-      padding: 10px 0;
-      text-align: center;
-    }
-
-   .container {
-      max-width: 960px;
-      margin: 20px auto;
-      background-color: white;
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    h1, h2, h3 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-   .frame {
-      border: 1px solid #ddd;
-      padding: 10px;
-      border-radius: 5px;
-      background-color: #f9f9f9;
-      margin-bottom: 20px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    th, td {
-      text-align: left;
-      padding: 8px;
-      border: 1px solid #ddd;
-    }
-
-    th {
-      background-color: #f2f2f2;
-    }
-
-   .selectable {
-      cursor: pointer;
-    }
-
-   .selectable:hover {
-      background-color: #f2f2f2;
-    }
-
-   .selected {
-      background-color: #007bff;
-      color: white;
-    }
-  </style>
-</head>
-<body>
-  <nav class="nav__bar">
-    <div class="logo">
-      <img src="images\logo-hanimal.png" alt="" />
-    </div>
-
-    <ul class="navbar">
-      <li><a href="home">Beranda</a></li>
-      <li><a href="pelayanan">Pelayanan</a></li>
-      <li><a href="news">News</a></li>
-      <li><a href="aboutus">Tentang Kami</a></li>
-      <li><a href="login_portal">Log Out</a></li>
-    </ul>
-
-    <div id="menu__btn" class="fas fa-bars"></div>
-  </nav>
-
-  <div class="container">
-    <h2>Tarif Dasar Layanan Dokter Hewan ke Rumah</h2>
-
-    <div class="frame">
-      <table>
+  <div class="tarif-container">
+    
+    <div class="tarif-frame">
+      <h2 class="tarif-title">Tarif Dasar Layanan Dokter Hewan ke Rumah</h2>
+      <table class="tarif-table">
         <tr>
-          <th>Layanan</th>
-          <th>Biaya</th>
+          <th class="tarif-th">Layanan</th>
+          <th class="tarif-th">Biaya</th>
         </tr>
         <tr>
-          <td>Biaya Dokter</td>
-          <td>Rp 40.000 / Hewan</td>
+          <td class="tarif-td">Biaya Dokter</td>
+          <td class="tarif-td">Rp 40.000</td>
         </tr>
         <tr>
-          <td>Biaya Jarak</td>
-          <td>4 km = Free 4 km = Rp 10.000 / km batas
+          <td class="tarif-td">Biaya Jarak</td>
+          <td class="tarif-td">4 km = Free 4 km = Rp 10.000 / km batas
           maksimal Rp 150.000</td>
         </tr>
         <tr>
-          <td>Biaya Admin</td>
-          <td>Rp 5.000</td>
+          <td class="tarif-td">Biaya Admin</td>
+          <td class="tarif-td">Rp 5.000</td>
         </tr>
         <tr>
-          <td>Biaya pengobatan (obat oral)</td>
-          <td>Tergantung obat yang diberikan</td>
+          <td class="tarif-td">Biaya pengobatan (obat oral)</td>
+          <td class="tarif-td">Tergantung obat yang diberikan</td>
         </tr>
         <tr>
-          <td>Biaya Prosedur</td>
-          <td>Tergantung prosedur yang dilakukan</td>
+          <td class="tarif-td">Biaya Prosedur</td>
+          <td class="tarif-td">Tergantung prosedur yang dilakukan</td>
         </tr>
       </table>
     </div>
 
-    <div class="note">
+    <div class="tarif-note">
       <h3>*Catatan</h3>
       <p>Biaya dasar merupakan biaya kunjungan dan pemeriksaan kesehatan.</p>
       <p>Apabila pelanggan melakukan pembatalan biaya ketika dokter hewan sudah berada di perjalanan, maka pelanggan tetap harus membayar. Biaya pembatalan dikenakan sebesar 50% dari harga awal.</p>
     </div>
 
-    <h2>Tarif Tindakan Medis Dokter Hewan</h2>
-
-    <div class="frame">
-      <table id="selectable-table">
+    
+    <div class="tarif-frame">
+      <h2 class="tarif-title">Tarif Tindakan Medis Dokter Hewan</h2>
+      <table class="tarif-table" id="tarif-selectable-table">
         <tr>
-          <th>Nama Prosedur</th>
-          <th>Harga (Rp)</th>
+          <th class="tarif-th">Nama Prosedur</th>
+          <th class="tarif-th">Harga (Rp)</th>
         </tr>
-        <tr class="selectable">
-          <td>Vaksinasi semua jenis hewan</td>
-          <td>Rp 40.000</td>
+        <tr class="tarif-selectable">
+          <td class="tarif-td">Vaksinasi semua jenis hewan</td>
+          <td class="tarif-td">40000</td>
         </tr>
-        <tr class="selectable">
-          <td>Diagnosa kebuntingan</td>
-          <td>Rp 30.000</td>
+        <tr class="tarif-selectable">
+          <td class="tarif-td">Diagnosa kebuntingan</td>
+          <td class="tarif-td">30000</td>
         </tr>
-        <tr class="selectable">
-          <td>Pemasangan infus</td>
-          <td>Rp 20.000</td>
+        <tr class="tarif-selectable">
+          <td class="tarif-td">Pemasangan infus</td>
+          <td class="tarif-td">20000</td>
         </tr>
-        <tr class="selectable">
-          <td>Suntik scabies</td>
-          <td>Rp 30.000</td>
+        <tr class="tarif-selectable">
+          <td class="tarif-td">Suntik scabies</td>
+          <td class="tarif-td">30000</td>
         </tr>
-        <tr class="selectable">
-            <td>Pemeriksa kesehatan rutin pada semua jenis hewan</td>
-            <td>Rp 70.000</td>
-          </tr>
-          <tr class="selectable">
-            <td>Catering</td>
-            <td>Rp 40.000</td>
-          </tr>
-          <tr class="selectable">
-            <td>Konsultasi dokter</td>
-            <td>Rp 20.000</td>
-          </tr>
-          <tr class="selectable">
-           <td>Pemeriksaan reproduksi (USG)</td>
-            <td>Rp 50.000</td>
-          </tr>
-          <tr class="selectable">
-            <td>Abdominocentesis</td>
-            <td>Rp 100.000</td>
-          </tr>
-          <tr class="selectable">
-            <td>Othematoma</td>
-            <td>Rp 120.000</td>
-          </tr>
-        </table>
-      </div>
-  
-      <a href="#" class="button">Pesan</a>
+        <tr class="tarif-selectable">
+          <td class="tarif-td">Pemeriksa kesehatan rutin pada semua jenis hewan</td>
+          <td class="tarif-td">70000</td>
+        </tr>
+        <tr class="tarif-selectable">
+          <td class="tarif-td">Catering</td>
+          <td class="tarif-td">40000</td>
+        </tr>
+        <tr class="tarif-selectable">
+          <td class="tarif-td">Konsultasi dokter</td>
+          <td class="tarif-td">20000</td>
+        </tr>
+        <tr class="tarif-selectable">
+          <td class="tarif-td">Pemeriksaan reproduksi (USG)</td>
+          <td class="tarif-td">50000</td>
+        </tr>
+        <tr class="tarif-selectable">
+          <td class="tarif-td">Abdominocentesis</td>
+          <td class="tarif-td">100000</td>
+        </tr>
+        <tr class="tarif-selectable">
+          <td class="tarif-td">Othematoma</td>
+          <td class="tarif-td">120000</td>
+        </tr>
+      </table>
     </div>
-  
-    <script>
-      const selectableTable = document.getElementById("selectable-table");
-  
-      selectableTable.addEventListener("click", (event) => {
-        if (event.target.tagName === "TD") {
-          const row = event.target.parentNode;
-          row.classList.toggle("selected");
-        }
-      });
-    </script>
-  </body>
-  </html>
+
+    <a href="/pembayaran" class="tarif-button">Pesan</a>
+    <p id="totalAmount">0</p>
+  </div>
+
+  <script src="js/pesan.js"></script>
+</body>
+</html>
