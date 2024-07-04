@@ -7,23 +7,24 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="loginu-container">
-        <div class="login-box">
-            <img src="images/logo-hanimal.png" alt="Healthy Animal" class="logo">
-            <h1>Login Doktor</h1>
+    <div class="doktor-login-container">
+        <div class="doktor-login-box">
+            <img src="images/logo-hanimal.png" alt="Healthy Animal" class="doktor-logo">
+            <div class="divider"></div>
+            <h1 class="doktor-heading">Login Doktor</h1>
             <form action="/login_doctor" method="POST">
-                <div>
+                <div class="doktor-input-group">
                     <label for="username">Username:</label>
                     <input type="text" id="username" name="username" required>
                 </div>
-                <div>
+                <div class="doktor-input-group">
                     <label for="password">Password:</label>
                     <input type="password" id="password" name="password" required>
                 </div>
-                <button type="submit">Login</button>
+                <button type="submit" class="doktor-login-button">Login</button>
             </form>
-            <p>Belum memiliki akun? Daftar dengan klik link dibawah ini!</p>
-            <a href="/signup">Sign Up</a>
+            <p class="doktor-signup-link">Belum memiliki akun? Daftar dengan klik link dibawah ini!</p>
+            <a href="/signup" class="doktor-signup">Sign Up</a>
         </div>
     </div>
 </body>

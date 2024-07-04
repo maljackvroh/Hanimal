@@ -13,7 +13,167 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <!-- <link rel="stylesheet" href="css/style.css" /> -->
+     <style>
+      :root {
+    --clr-bm: #97d2f0; /* Light Blue */
+    --clr-am: #d9d9d9; /* Light Grey */
+    --clr-bt: #015478; /* Dark Blue */
+    --clr-at: #677483; /* Medium Grey */
+    --clr-ijo: #18ad00; /* Green */
+    --clr-wth: #ffffff; /* White */
+    --clr-blk: #000000; /* Black */
+    --clr-bord: #d0d0d0; /* Border Grey */
+    --clr-text: #666666; /* Text Grey */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--clr-wth);
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+      .ha-header {
+    background-color: var(--clr-bm); /* Menggunakan variabel dari root CSS */
+    color: var(--clr-wth);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 80px; /* Sesuaikan ukuran header */
+}
+
+.ha-header .ha-logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.ha-logout {
+    padding-right: 20px; /* Menambah padding kanan untuk logout */
+}
+
+.ha-logout a {
+    color: var(--clr-wth);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px; /* Menambah padding pada link logout */
+}
+
+.ha-sidebar {
+    width: 200px;
+    background-color: var(--clr-bm);
+    padding: 20px;
+    border-right: 1px solid var(--clr-bord);
+    height: calc(100vh - 80px); 
+    position: fixed;
+    top: 100px; 
+    left: 0;
+    color: var(--clr-blk);
+}
+
+.ha-sidebar .ha-logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.ha-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ha-sidebar li {
+    margin-bottom: 10px;
+}
+
+.ha-sidebar a {
+    text-decoration: none;
+    color: var(--clr-blk);
+    display: block;
+    padding: 10px;
+    font-weight: bold;
+    border: 1px solid transparent;
+}
+
+.ha-sidebar a.active, .ha-sidebar a:hover {
+    background-color: var(--clr-ijo);
+    color: var(--clr-wth);
+    border-color: var(--clr-ijo);
+}
+
+.ha-content {
+    padding: 20px;
+    margin-left: 220px;
+    margin-top: 160px; 
+    max-width: calc(100% - 240px); 
+}
+
+.ha-biodata, .ha-penanganan, .ha-rekam-medis {
+    display: none;
+}
+
+.ha-biodata.active, .ha-penanganan.active, .ha-rekam-medis.active {
+    display: block;
+}
+
+.ha-biodata dl {
+    margin-top: 20px;
+}
+
+.ha-biodata dl dt {
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.ha-biodata dl dd {
+    padding-bottom: 10px;
+    margin-left: 20px;
+}
+
+.ha-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.ha-table thead {
+    background-color: var(--clr-at);
+    color: var(--clr-blk);
+}
+
+.ha-table th, .ha-table td {
+    border: 1px solid var(--clr-bord);
+    padding: 8px;
+    text-align: left;
+}
+
+.ha-table tbody tr:nth-child(odd) {
+    background-color: var(--clr-wth);
+}
+
+.ha-table tbody tr:nth-child(even) {
+    background-color: var(--clr-am);
+}
+
+.ha-button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    background-color: var(--clr-ijo);
+    color: var(--clr-wth);
+    border: none;
+    cursor: pointer;
+}
+
+.ha-button:hover {
+    background-color: #128700;
+}
+     </style>
   </head>
   <body>
     <div class="ha-header">
@@ -126,17 +286,21 @@
     </div>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        const url = window.location.href;
-        const activePage = url.substring(url.lastIndexOf('/') + 1);
+    const pathName = window.location.pathname; // Ambil path dari URL saat ini
+    
+    const sidebarLinks = document.querySelectorAll('.ha-sidebar a');
+    sidebarLinks.forEach(link => {
+        const linkPath = link.getAttribute('href'); // Ambil path dari href link
         
-        const sidebarLinks = document.querySelectorAll('.ha-sidebar a');
-        sidebarLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === activePage) {
+        // Cocokkan pathName dengan linkPath untuk menentukan link yang aktif
+        if (pathName === linkPath) {
             link.classList.add('active');
-          }
-        });
-      });
+        } else {
+            link.classList.remove('active');
+        }
+    });
+});
+
     </script>
   </body>
 </html>

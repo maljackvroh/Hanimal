@@ -13,8 +13,6 @@
 body {
     font-family: Arial, sans-serif;
     background-color: var(--clr-wth);
-    /* display: flex;
-    flex-direction: column; */
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -365,62 +363,93 @@ button[type="submit"]:hover {
 
 
 /* LOGIN PORTAL CONTAINER */
-.loginu-container {
+.portal-container-custom {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
     height: 100%;
 }
 
-.loginu-container login-box {
-    background: var(--clr-wth);
-    padding: 20px 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 350px;
-    height: 400px;
+.portal-container-custom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
-.loginu-container logo {
-    width: 200px;
-    margin-bottom: 20px;
+.divider {
+    width: 100%;
+    height: 4px; 
+    background-color: var(--clr-ijo);
+    margin: 20px 0; 
 }
 
-.loginu-container h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: var(--clr-bt);
-    padding-bottom: 10px;
-}
-
-.loginu-container form {
+.login-box-custom {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Add gap between form elements */
+    align-items: center;
+    width: 80%;
+    max-width: 400px;
+    padding: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    gap: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+h1.custom-heading {
+    color: var(--clr-bt);
+    margin: 10px 0;
+}
+
+p.custom-paragraph {
+    color: var(--clr-at);
+    margin: 10px 0;
+}
+
+.buttons-custom {
+    display: flex;
+    justify-content: space-between;
     width: 100%;
+    padding-top: 50px;
 }
 
-.loginu-container p {
-    font-size: 14px;
-    color: var(--clr-text);
-    margin-bottom: 20px;
-}
-
-.loginu-container button {
-    background: var(--clr-am);
+button.custom-button {
+    background-color: var(--clr-bm);
+    border: 2px solid var(--clr-bm);
     color: var(--clr-blk);
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 16px;
     font-weight: bold;
+    padding: 10px 20px;
+    font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 10px;
+    flex: 1;
+    margin: 0 5px;
+    box-sizing: border-box;
 }
 
-.loginu-container button:hover {
-    background: var(--clr-ijo);
+button.custom-button:hover {
+    background-color: var(--clr-bord);
+    color: var(--clr-blk);
+}
+
+button.back-button-custom {
+    background-color: var(--clr-ijo);
     color: var(--clr-wth);
+    font-size: 18px;
+    padding: 15px 25px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 20px;
+    transition: background-color 0.3s, color 0.3s;
+    border: none;
+}
+button.back-button-custom:hover {
+    background-color: var(--clr-bord);
+    color: var(--clr-blk);
 }
 
 /* pelayanan */
@@ -506,8 +535,7 @@ button[type="submit"]:hover {
 }
 
 .logo {
-    width: 150px;
-    margin-bottom: 20px;
+    width: 250px;
 }
 
 h1 {
@@ -560,6 +588,82 @@ h1 {
 }
 
 .signup:hover {
+    text-decoration: underline;
+}
+
+/* DOCTOR LOGIN */
+.doktor-login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.doktor-login-box {
+    background-color: var(--clr-wth);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+    box-sizing: border-box;
+}
+
+.doktor-logo {
+    width: 250px;
+}
+
+.doktor-heading {
+    color: var(--clr-bt);
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+.doktor-input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.doktor-input-group label {
+    color: var(--clr-at);
+    margin-bottom: 5px;
+}
+
+.doktor-input-group input {
+    width: calc(100% - 22px); 
+    padding: 10px;
+    border: 1px solid var(--clr-bm);
+    border-radius: 4px;
+    background-color: var(--clr-bm);
+}
+
+.doktor-login-button {
+    background-color: var(--clr-ijo);
+    color: var(--clr-wth);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.doktor-login-button:hover {
+    background-color: var(--clr-am);
+    color: var(--clr-blk);
+}
+
+.doktor-signup-link {
+    color: var(--clr-text);
+    font-size: 0.8em;
+}
+
+.doktor-signup {
+    color: var(--clr-bt);
+    text-decoration: none;
+}
+
+.doktor-signup:hover {
     text-decoration: underline;
 }
 
@@ -706,8 +810,8 @@ h1 {
 .ha-content {
     padding: 20px;
     margin-left: 220px;
-    margin-top: 160px; /* Menyesuaikan dengan posisi yang lebih rendah */
-    max-width: calc(100% - 240px); /* Sesuaikan dengan lebar sidebar */
+    margin-top: 160px; 
+    max-width: calc(100% - 240px); 
 }
 
 .ha-biodata, .ha-penanganan, .ha-rekam-medis {
@@ -769,7 +873,6 @@ h1 {
 .ha-button:hover {
     background-color: #128700;
 }
-
 
 
 /* PESAN */

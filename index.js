@@ -23,7 +23,7 @@ app.use(session({
     }
 }));
 
-// middleware untuk parsing  JSON dan URL-encoded from data
+// middleware
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
@@ -42,19 +42,15 @@ app.set('views', path.join(__dirname, 'views'));
 // Atur route
 app.use(DoctorRoute);
 app.use(UserRoute);
-// app.use(AdminRoute);
 app.use(AuthRoute);
 app.use(invoiceRoute);
 
-
-// app.use(adminDoctorRouter);
-// app.use(adminGeneralRouter);
 
 app.get('/aboutus', (req, res) => {
     res.render('aboutus'); 
 });
 
-app.get('/add_doctor', (req, res) => {
+app.get('/signup', (req, res) => {
     res.render('add_doctors');
 });
 
@@ -106,7 +102,6 @@ app.get('/upload', (req, res) => {
     res.render('upload');
 });
 
-
 app.get('/news', (req, res) => {
     res.render('news');
 });
@@ -114,14 +109,12 @@ app.get('/news', (req, res) => {
 app.get('/createPayment', (req, res) => {
     res.render('resi')
 });
-  
 
 app.get('/home', (req, res) => {
     res.render('home');
 });
 
-
-app.get('/', (req, res) => {
+app.get('/homepage', (req, res) => {
     res.render('homepage');
 });
 
