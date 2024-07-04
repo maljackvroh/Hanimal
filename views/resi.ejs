@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resi Pembayaran Hanimal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .resi-container {
+      width: 80%;
+      margin: 0 auto;
+    }
+    h2 {
+      text-align: center;
+    }
+    .info {
+      margin-bottom: 20px;
+    }
+    .info p {
+      margin: 5px 0;
+    }
+    .total {
+      margin-top: 20px;
+    }
+    .total span {
+      float: right;
+    }
+  </style>
+</head>
+<body>
+  <div class="resi-container">
+    <h2>Resi Pembayaran Hanimal</h2>
+    <div class="info">
+      <p>Nama Lengkap: <%= name %></p>
+      <p>Jenis Hewan: <%= animalType %></p>
+      <p>Alamat: <%= address %></p>
+      <p>Umur: <%= age %> tahun</p>
+      <p>Jenis Kelamin: <%= gender %></p>
+      <p>Nomor Telepon: <%= phone %></p>ss
+    </div>
+    <div class="invoice-details">
+      <p>Biaya Obat: Rp <%= medicineCost %></p>
+      <p>Biaya Administrasi: Rp <%= adminCost %></p>
+      <p>Biaya Pelayanan: Rp <%= serviceCost %></p>
+      <p>Biaya Perjalanan: Rp <%= travelCost %></p>
+    </div>
+    <div class="total">
+      <span>Total Pembayaran: Rp <%= totalAmount %></span>
+    </div>
+  </div>
+</body>
+</html>
