@@ -1,20 +1,25 @@
 import express from "express";
+import bodyParser from "body-parser";
 import path from "path";
 import cors from "cors";
 import UserRoute from "./routes/user_routes.js";
 import DoctorRoute from "./routes/doctor_routes.js";
 import AuthRoute from "./routes/auth_routes.js";
 import invoiceRoute from "./routes/invoice_routes.js";
-// import adminDoctorRouter from "./admin/admin_doctor.js";
-// import adminGeneralRouter from "./admin/admin_general.js";
+import SequelizeStore from 'connect-session-sequelize';
 import session  from "express-session";
 import { fileURLToPath } from "url";
+import db from './config/database.js';
 
 const app = express();
 const PORT = 3000;
 
+const SequelizeStoreInstance = SequelizeStore(session.Store);
+const store = new SequelizeStoreInstance({ db });
+
 app.use(session({
     secret:'this is my key',
+    store: store,
     saveUninitialized: false, 
     resave: false,
     cookie: {

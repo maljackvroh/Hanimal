@@ -10,9 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
     function getScript1Total() {
       const medicineCost = 50000;
       const adminCost = 5000;
-      const travelCost = 50000;
+      const travelCost = 0;
       const serviceCost = parseInt(sessionStorage.getItem('totalPesanan')) || 0;
-      
+      a
       const totalScript1 = medicineCost + adminCost + serviceCost + travelCost;
       return totalScript1;
     }
