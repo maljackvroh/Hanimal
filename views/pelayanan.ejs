@@ -26,22 +26,66 @@
 <div class="search-section">
   <nav aria-label="breadcrumb" class="breadcrumb-container">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="index.html">Beranda</a></li>
+      <li class="breadcrumb-item"><a href="/home">Beranda</a></li>
       <li class="breadcrumb-item active" aria-current="page">Pelayanan</li>
     </ol>
   </nav>
-  <h1>Cari Dokter</h1>
+  <!-- <h1>Cari Dokter</h1>
   <div class="search-container">
     <i class="fa fa-search"></i>
     <input type="text" placeholder="Ketik nama dokter atau gunakan filter" />
   </div>
-  <button type="button">Filter</button>
+  <button type="button">Filter</button> -->
 </div>
 
 <div class="pelayanan-container" id="doctor-container">
-    <!-- Doctor cards will be injected here by JavaScript -->
+  
 </div>
+<script>
+  async function fetchDoctors() {
+    try {
+        const response = await fetch('http://localhost:3000/doctor');
+        const doctors = await response.json();
+        const container = document.getElementById('doctor-container');
+        doctors.forEach(doctor => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <div class="doctor-image">
+                  <img src="${doctor.image || '../images/profile.png'}" alt="${doctor.username}">
+                </div>
+                <div class="card-info">
+                  <h2>${doctor.username}</h2>
+                  ${doctor.spesialis ? `<p>${doctor.spesialis}</p>` : ''}
+                  <div class="buttons">
+                    <button class="profile-btn" onclick="redirectToProfile('${doctor.username}')">Profile</button>
+                    <button class="order-btn" onclick="redirectToOrder('${doctor.username}')">Pesan</button>
+                    <button class="discuss-btn" onclick="redirectToWhatsApp('${doctor.no_hp}')">Diskusi</button>
+                  </div>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    } catch (error) {
+        console.error('Error fetching doctors:', error);
+    }
+}
 
-<script src="js/pelayanan-card.js"></script>
+function redirectToProfile(username) {
+    window.location.href = `/profile?username=${username}`;
+}
+
+function redirectToOrder(username) {
+    window.location.href = `/pesan?username=${username}`;
+}
+
+function redirectToWhatsApp(phone) {
+    window.location.href = `https://wa.me/${phone}`;
+}
+
+document.addEventListener('DOMContentLoaded', fetchDoctors);
+
+</script>
+<!-- <script src="js/pelayanan-card.js"></script> -->
 </body>
 </html>

@@ -8,7 +8,7 @@ async function fetchDoctors() {
             card.className = 'card';
             card.innerHTML = `
                 <h2>${doctor.username}</h2>
-                <p>${doctor.spesialis}</p>
+                ${doctor.spesialis ? `<p>${doctor.spesialis}</p>` : ''}
                 <div class="buttons">
                     <button class="profile-btn" onclick="redirectToProfile('${doctor.username}')">Profile</button>
                     <button class="order-btn" onclick="redirectToOrder('${doctor.username}')">Pesan</button>

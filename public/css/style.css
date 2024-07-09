@@ -287,10 +287,12 @@ button[type="submit"]:hover {
   
 /* PELAYANAN */
 .search-section {
-    background-image: url("images/pelayanan-1.png");
+    background-image: url("../images/pelayanan-1.png");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
+    height: auto;
+    min-height: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -301,6 +303,10 @@ button[type="submit"]:hover {
   
   .breadcrumb-container {
     margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 50px;
   }
   
   .breadcrumb {
@@ -452,9 +458,11 @@ button.back-button-custom:hover {
     color: var(--clr-blk);
 }
 
-/* pelayanan */
+/* PELAYANAN CARD*/
 .pelayanan-container {
     display: grid;
+    /* flex-direction: column; */
+    /* align-items: center; */
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     justify-content: center;
@@ -468,20 +476,25 @@ button.back-button-custom:hover {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin: 10px;
     padding: 20px;
-    width: 250px;
+    /* width: 250px; */
+    display: flex;
+    align-items: center;
     text-align: center;
     position: relative;
 }
 
 .doctor-image img {
-    display: none;
+    /* display: none; */
     border-radius: 50%;
     width: 80px;
     height: 80px;
     object-fit: cover;
     margin-bottom: 10px;
 }
-
+.card-info {
+    flex: 1;
+    margin-top: 20px;
+}
 .card h2 {
     font-size: 1.2em;
     margin: 0 0 10px;

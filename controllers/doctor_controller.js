@@ -12,9 +12,9 @@ const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, path.join(__dirname, '../public/uploads'));
     },
-    filename: (req, file, cb) => {
-        cb(null, `${Date.now()}-${file.originalname}`);
-    }
+    // filename: (req, file, cb) => {
+    //     cb(null, ${Date.now()}-${file.originalname});
+    // }
 });
 
 
@@ -44,22 +44,22 @@ export const getDoctors = async (req, res) => {
     }
 };
 
-export const getDoctorsById = async (req, res) => {
-    try {
-        const username = req.params.username;
-        if (!username) {
-            return res.status(400).send('Username parameter is missing or invalid');
-        }
-        const doctor = await Doctor.findOne({where: {username:username}});
-        if (!doctor) {
-            return res.status(404).send('Doctor not found');
-        }
-        res.render('dashboard_doctor', { doctor }); 
-    } catch (error) {
-        console.error(error);
-        res.status(500).send('Terjadi kesalahan(dc_gdby)');
-    }
-};
+// export const getDoctorsById = async (req, res) => {
+//     try {
+//         const username = req.params.username;
+//         if (!username) {
+//             return res.status(400).send('Username parameter is missing or invalid');
+//         }
+//         const doctor = await Doctor.findOne({where: {username:username}});
+//         if (!doctor) {
+//             return res.status(404).send('Doctor not found');
+//         }
+//         res.render('dashboard_doctor', { doctor }); 
+//     } catch (error) {
+//         console.error(error);
+//         res.status(500).send('Terjadi kesalahan(dc_gdby)');
+//     }
+// };
 
 export const createDoctors = async (req, res) => {
     try {
