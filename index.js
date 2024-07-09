@@ -5,7 +5,7 @@ import cors from "cors";
 import UserRoute from "./routes/user_routes.js";
 import DoctorRoute from "./routes/doctor_routes.js";
 import AuthRoute from "./routes/auth_routes.js";
-import invoiceRoute from "./routes/invoice_routes.js";
+// import invoiceRoute from "./routes/invoice_routes.js";
 import SequelizeStore from 'connect-session-sequelize';
 import session  from "express-session";
 import { fileURLToPath } from "url";
@@ -48,7 +48,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(DoctorRoute);
 app.use(UserRoute);
 app.use(AuthRoute);
-app.use(invoiceRoute);
+// app.use(invoiceRoute);
 
 
 app.get('/aboutus', (req, res) => {
@@ -111,8 +111,20 @@ app.get('/news', (req, res) => {
     res.render('news');
 });
 
-app.get('/createPayment', (req, res) => {
-    res.render('resi')
+app.get('/resi', (req, res) => {
+    const data = {
+        name: req.query.name,
+        animalType: req.query.animal_type,
+        address: req.query.address,
+        age: req.query.age,
+        gender: req.query.gender,
+        phone: req.query.phone,
+        medicineCost: req.query.medicine_cost,
+        adminCost: req.query.admin_cost,
+        serviceCost: req.query.service_cost,
+        totalAmount: parseInt(req.query.medicine_cost) + parseInt(req.query.admin_cost) + parseInt(req.query.service_cost)
+    };
+    res.render('resi', data);
 });
 
 app.get('/home', (req, res) => {

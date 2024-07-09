@@ -38,14 +38,14 @@
       <div class="container">
         <h2>Pilih Pembayaran</h2>
         <form action="paymentForm">
-          <input type="radio" name="payment" id="kredit" />
+          <!-- <input type="radio" name="payment" id="kredit" /> -->
           <input type="radio" name="payment" id="bri" />
           <input type="radio" name="payment" id="dana" />
           <input type="radio" name="payment" id="ovo" />
           <input type="radio" name="payment" id="qris" />
           <input type="radio" name="payment" id="cod" />
           <div class="category">
-            <label for="kredit" class="kreditMethod">
+            <!-- <label for="kredit" class="kreditMethod">
               <div class="imgName">
                 <div class="imgContainer kredit">
                   <img src="images\kredit.png" alt="" />
@@ -58,7 +58,7 @@
                   style="color: #015478"
                 ></i
               ></span>
-            </label>
+            </label> -->
             <label for="bri" class="briMethod">
               <div class="imgName">
                 <div class="imgContainer bri">
@@ -104,7 +104,7 @@
               ></span>
             </label>
 
-            <label for="qris" class="qrisMethod">
+            <!-- <label for="qris" class="qrisMethod">
               <div class="imgName">
                 <div class="imgContainer qris">
                   <img src="images\qris.png" alt="" />
@@ -117,7 +117,7 @@
                   style="color: #015478"
                 ></i
               ></span>
-            </label>
+            </label> -->
 
             <label for="cod" class="codMethod">
               <div class="imgName">
@@ -138,7 +138,7 @@
       </div>
       <div class="invoice">
         <h2>Invoice</h2>
-        <form id="invoiceForm" action="/createPayment" method="POST" class="form-invoice">
+        <form id="invoiceForm" action="/cara_bayar" class="form-invoice">
           <div class="row">
             <div class="col-50">
               <input type="text" name="name" placeholder="Nama Lengkap" />
@@ -197,6 +197,5 @@
   </section>
 
   <script src="js/pembayaran.js"></script>
-  <script src="js/resi.js"></script>
 </body>
 </html>

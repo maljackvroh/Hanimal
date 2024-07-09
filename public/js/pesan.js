@@ -1,5 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const hargaElements = document.querySelectorAll('#tarif-selectable-table tr.tarif-selectable td.tarif-td:nth-child(2)');
+const hargaElements = document.querySelectorAll('#tarif-selectable-table tr.tarif-selectable td.tarif-td:nth-child(2)');
     
     hargaElements.forEach(element => {
       let harga = parseInt(element.textContent);
@@ -35,5 +34,4 @@ document.addEventListener('DOMContentLoaded', function() {
       var ribuan = reverse.match(/\d{1,3}/g);
       ribuan = ribuan.join('.').split('').reverse().join('');
       return ribuan;
-    }      
-});
+    } 

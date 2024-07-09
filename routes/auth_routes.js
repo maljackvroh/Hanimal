@@ -6,9 +6,9 @@ import Doctor from '../models/doctor_model.js';
 const router = express.Router();
 
 // Route untuk menampilkan form login
-router.get('/login', (req, res) => {
-    res.render('login');
-});
+// router.get('/login', (req, res) => {
+//     res.render('login');
+// });
 
 // Route untuk memproses login
 router.post('/login_user', async (req, res) => {

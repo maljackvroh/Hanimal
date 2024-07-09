@@ -1,342 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <!-- <link rel="stylesheet" href="css/style.css" /> -->
-     <style>
-      :root {
-    --clr-bm: #97d2f0; /* Light Blue */
-    --clr-am: #d9d9d9; /* Light Grey */
-    --clr-bt: #015478; /* Dark Blue */
-    --clr-at: #677483; /* Medium Grey */
-    --clr-ijo: #18ad00; /* Green */
-    --clr-wth: #ffffff; /* White */
-    --clr-blk: #000000; /* Black */
-    --clr-bord: #d0d0d0; /* Border Grey */
-    --clr-text: #666666; /* Text Grey */
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: var(--clr-wth);
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-      .ha-header {
-    background-color: var(--clr-bm); /* Menggunakan variabel dari root CSS */
-    color: var(--clr-wth);
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    height: 80px; /* Sesuaikan ukuran header */
-}
-
-.ha-header .ha-logo {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.ha-logout {
-    padding-right: 20px; /* Menambah padding kanan untuk logout */
-}
-
-.ha-logout a {
-    color: var(--clr-wth);
-    text-decoration: none;
-    font-weight: bold;
-    padding: 5px 10px; /* Menambah padding pada link logout */
-}
-
-.ha-sidebar {
-    width: 200px;
-    background-color: var(--clr-bm);
-    padding: 20px;
-    border-right: 1px solid var(--clr-bord);
-    height: calc(100vh - 80px); 
-    position: fixed;
-    top: 100px; 
-    left: 0;
-    color: var(--clr-blk);
-}
-
-.ha-sidebar .ha-logo {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.ha-sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.ha-sidebar li {
-    margin-bottom: 10px;
-}
-
-.ha-sidebar a {
-    text-decoration: none;
-    color: var(--clr-blk);
-    display: block;
-    padding: 10px;
-    font-weight: bold;
-    border: 1px solid transparent;
-}
-
-.ha-sidebar a.active, .ha-sidebar a:hover {
-    background-color: var(--clr-ijo);
-    color: var(--clr-wth);
-    border-color: var(--clr-ijo);
-}
-
-.ha-content {
-    padding: 20px;
-    margin-left: 240px; /* Menambahkan jarak ke sebelah kiri */
-    margin-top: 160px; 
-    max-width: calc(100% - 240px); 
-}
-
-.ha-biodata, .ha-penanganan, .ha-rekam-medis {
-    display: none;
-}
-
-.ha-biodata.active, .ha-penanganan.active, .ha-rekam-medis.active {
-    display: block;
-}
-
-.ha-biodata dl {
-    margin-top: 20px;
-}
-
-.ha-biodata dl dt {
-    font-weight: bold;
-    padding-top: 10px;
-}
-
-.ha-biodata dl dd {
-    padding-bottom: 10px;
-    margin-left: 20px;
-}
-
-.ha-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-.ha-table thead {
-    background-color: var(--clr-at);
-    color: var(--clr-blk);
-}
-
-.ha-table th, .ha-table td {
-    border: 1px solid var(--clr-bord);
-    padding: 8px;
-    text-align: left;
-}
-
-.ha-table tbody tr:nth-child(odd) {
-    background-color: var(--clr-wth);
-}
-
-.ha-table tbody tr:nth-child(even) {
-    background-color: var(--clr-am);
-}
-
-.ha-button {
-    margin-right: 5px;
-    padding: 5px 10px;
-    background-color: var(--clr-ijo);
-    color: var(--clr-wth);
-    border: none;
-    cursor: pointer;
-}
-
-.ha-button:hover {
-    background-color: #128700;
-}
-
-.ha-edit-form {
-    display: none;
-    margin-top: 20px;
-}
-
-.ha-edit-form input, .ha-edit-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid var(--clr-bord);
-}
-     </style>
-  </head>
-  <body>
-    <div class="ha-header">
-      <div class="ha-logo">
-        <img src="images\logo-hanimal.png" alt="Healthy Animal" />
-      </div>
-      <div class="ha-logout">
-        <a href="/homepage">Logout</a>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />  
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="ha-header">
+    <div class="ha-logo">
+      <img src="images\logo-hanimal.png" alt="Healthy Animal" />
     </div>
-    <div class="ha-sidebar">
-      <ul>
-        <li><a href="#" class="ha-biodata-link">Biodata</a></li>
-        <li>
-          <a href="#" class="ha-penanganan-link">Laporan Penanganan & Tindak Lanjut</a>
-        </li>
-        <li>
-          <a href="#" class="ha-rekam-medis-link">Laporan Rekam Medis</a>
-        </li>
-      </ul>
+    <div class="ha-logout">
+      <a href="/homepage">Logout</a>
     </div>
-    <div class="ha-content">
-      <div id="biodata" class="ha-biodata active" method="get">
-        <dl>
-            <dt>Nama</dt>
-            <dd>Tidak Tersedia</dd>
-            <dt>Tanggal lahir</dt>
-            <dd>Tidak Tersedia</dd>
-            <dt>Alamat</dt>
-            <dd>Tidak tersedia</dd>
-            <dt>Tempat Praktik</dt>
-            <dd>Tidak Tersedia</dd>
-            <dt>Spesialisasi</dt>
-            <dd>Tidak Tersedia</dd>
-            <dt>Pendidikan</dt>
-            <dd>Tidak Tersedia</dd>
-            <dt>Keanggotaan Profesional</dt>
-            <dd>Tidak Tersedia</dd>
-            <dt>Afiliasi Rumah Sakit</dt>
-            <dd>Tidak Tersedia</dd>
-            <dt>Bahasa Internasional</dt>
-            <dd>Tidak Tersedia</dd>
-            <dt>Bahasa Daerah</dt>
-            <dd>Tidak Tersedia</dd>
-            <dt>Perkenalan Singkat</dt>
-            <dd>Tidak Tersedia</dd>
-        </dl>
-        <!-- <button class="ha-button" id="edit-button">Edit</button> -->
+  </div>
+  <div class="ha-sidebar">
+    <ul>
+      <li><a href="#" class="ha-biodata-link">Biodata</a></li>
+      <li><a href="#" class="ha-penanganan-link">Penanganan & Tindak Lanjut</a></li>
+      <li><a href="#" class="ha-rekam-medis-link">Rekam Medis</a></li>
+    </ul>
+  </div>
+  <div class="ha-content">
+    <div id="biodata" class="ha-biodata active" method="get">
+      <dl>
+          <dt>Nama</dt>
+          <dd>Tidak Tersedia</dd>
+          <dt>Tanggal lahir</dt>
+          <dd>Tidak Tersedia</dd>
+          <dt>Alamat</dt>
+          <dd>Tidak tersedia</dd>
+          <dt>Tempat Praktik</dt>
+          <dd>Tidak Tersedia</dd>
+          <dt>Spesialisasi</dt>
+          <dd>Tidak Tersedia</dd>
+          <dt>Pendidikan</dt>
+          <dd>Tidak Tersedia</dd>
+          <dt>Keanggotaan Profesional</dt>
+          <dd>Tidak Tersedia</dd>
+          <dt>Afiliasi Rumah Sakit</dt>
+          <dd>Tidak Tersedia</dd>
+          <dt>Bahasa Internasional</dt>
+          <dd>Tidak Tersedia</dd>
+          <dt>Bahasa Daerah</dt>
+          <dd>Tidak Tersedia</dd>
+          <dt>Perkenalan Singkat</dt>
+          <dd>Tidak Tersedia</dd>
+      </dl>
+      <!-- <button class="ha-button" id="edit-button">Edit</button> -->
     </div>    
-      <div id="penanganan" class="ha-penanganan active">
-        <button class="ha-button">Tambah Laporan</button>
-        <table class="ha-table">
-          <thead>
-            <tr>
-              <th>Tanggal</th>
-              <th>Keluhan</th>
-              <th>Diagnosa</th>
-              <th>Tindakan</th>
-              <th>Tindak Lanjut</th>
-              <th>Keterangan</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>19 November 2022</td>
-              <td>Dilakukan operasi karena perut terkena infeksi serius</td>
-              <td>Perut berlubang, perut dibilas</td>
-              <td>Operasi, pemberian antibiotik</td>
-              <td>Perawatan di rumah, pengawasan ketat</td>
-              <td>Hewan menjadi sembuh dalam waktu cepat</td>
-            </tr>
-            <tr>
-              <td>23 Agustus 2023</td>
-              <td>Kucing tidak makan karena terkena flu burung</td>
-              <td>Diagnosis flu burung</td>
-              <td>Obat diteteskan di mata, memberikan makanan penambah nafsu makan</td>
-              <td>Diizinkan kembali setelah kucing makan dengan baik</td>
-              <td>Menghilangkan sakit dan sembuh dari flu burung</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div id="rekam-medis" class="ha-rekam-medis">
-        <button class="ha-button">Tambah Laporan</button>
-        <table class="ha-table">
-          <thead>
-            <tr>
-              <th>Tanggal</th>
-              <th>Keluhan</th>
-              <th>Diagnosa</th>
-              <th>Tindakan</th>
-              <th>Tindak Lanjut</th>
-              <th>Keterangan</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>19 Januari 2023</td>
-              <td>Kucing muntah-muntah</td>
-              <td>Mual</td>
-              <td>Obat</td>
-              <td>Pemulihan</td>
-              <td>Muntah-muntah</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    <div id="penanganan" class="ha-penanganan">
+      <button class="ha-button">Tambah Laporan</button>
+      <table class="ha-table">
+        <thead>
+          <tr>
+            <th>Tanggal</th>
+            <th>Keluhan</th>
+            <th>Diagnosa</th>
+            <th>Tindakan</th>
+            <th>Tindak Lanjut</th>
+            <th>Keterangan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>19 November 2022</td>
+            <td>Dilakukan operasi karena perut terkena infeksi serius</td>
+            <td>Perut berlubang, perut dibilas</td>
+            <td>Operasi, pemberian antibiotik</td>
+            <td>Perawatan di rumah, pengawasan ketat</td>
+            <td>Hewan menjadi sembuh dalam waktu cepat</td>
+          </tr>
+          <tr>
+            <td>23 Agustus 2023</td>
+            <td>Kucing tidak makan karena terkena flu burung</td>
+            <td>Diagnosis flu burung</td>
+            <td>Obat diteteskan di mata, memberikan makanan penambah nafsu makan</td>
+            <td>Diizinkan kembali setelah kucing makan dengan baik</td>
+            <td>Menghilangkan sakit dan sembuh dari flu burung</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const sidebarLinks = document.querySelectorAll('.ha-sidebar a');
-        const contentSections = {
-            biodata: document.getElementById('biodata'),
-            penanganan: document.getElementById('penanganan'),
-            rekamMedis: document.getElementById('rekam-medis')
-        };
+    <div id="rekam-medis" class="ha-rekam-medis">
+      <button class="ha-button">Tambah Laporan</button>
+      <table class="ha-table">
+        <thead>
+          <tr>
+            <th>Tanggal</th>
+            <th>Keluhan</th>
+            <th>Diagnosa</th>
+            <th>Tindakan</th>
+            <th>Tindak Lanjut</th>
+            <th>Keterangan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>19 November 2022</td>
+            <td>Dilakukan operasi karena perut terkena infeksi serius</td>
+            <td>Perut berlubang, perut dibilas</td>
+            <td>Operasi, pemberian antibiotik</td>
+            <td>Perawatan di rumah, pengawasan ketat</td>
+            <td>Hewan menjadi sembuh dalam waktu cepat</td>
+          </tr>
+          <tr>
+            <td>23 Agustus 2023</td>
+            <td>Kucing tidak makan karena terkena flu burung</td>
+            <td>Diagnosis flu burung</td>
+            <td>Obat diteteskan di mata, memberikan makanan penambah nafsu makan</td>
+            <td>Diizinkan kembali setelah kucing makan dengan baik</td>
+            <td>Menghilangkan sakit dan sembuh dari flu burung</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const sidebarLinks = document.querySelectorAll('.ha-sidebar a');
+      const contentSections = {
+          biodata: document.getElementById('biodata'),
+          penanganan: document.getElementById('penanganan'),
+          rekamMedis: document.getElementById('rekam-medis')
+      };
 
-        sidebarLinks.forEach(link => {
-            link.addEventListener('click', function(event) {
-                event.preventDefault();
-                
-                // Remove active class from all links
-                sidebarLinks.forEach(link => link.classList.remove('active'));
-                
-                // Hide all content sections
-                for (const key in contentSections) {
-                    contentSections[key].classList.remove('active');
-                }
-                
-                // Add active class to clicked link and show the corresponding content
-                this.classList.add('active');
-                const targetClass = this.classList[0];
-                contentSections[targetClass.split('-')[1]].classList.add('active');
-            });
-        });
-
-        const editButton = document.getElementById('edit-button');
-        const editForm = document.getElementById('edit-form');
-        const cancelButton = document.getElementById('cancel-button');
-        const biodataContent = document.querySelector('.ha-biodata dl');
-
-        editButton.addEventListener('click', function() {
-            biodataContent.style.display = 'none';
-            editForm.style.display = 'block';
-        });
-
-        cancelButton.addEventListener('click', function() {
-            biodataContent.style.display = 'block';
-            editForm.style.display = 'none';
-        });
+      sidebarLinks.forEach(link => {
+          link.addEventListener('click', function(event) {
+              event.preventDefault();
+              
+              sidebarLinks.forEach(link => link.classList.remove('active'));
+              
+              for (const key in contentSections) {
+                  contentSections[key].classList.remove('active');
+              }
+              
+              this.classList.add('active');
+              const targetClass = this.classList[0];
+              contentSections[targetClass.split('-')[1]].classList.add('active');
+          });
       });
-    </script>
-  </body>
+
+      const editButton = document.getElementById('edit-button');
+      const editForm = document.getElementById('edit-form');
+      const cancelButton = document.getElementById('cancel-button');
+      const biodataContent = document.querySelector('.ha-biodata dl');
+
+      editButton.addEventListener('click', function() {
+          biodataContent.style.display = 'none';
+          editForm.style.display = 'block';
+      });
+
+      cancelButton.addEventListener('click', function() {
+          biodataContent.style.display = 'block';
+          editForm.style.display = 'none';
+      });
+    });
+  </script>
+</body>
 </html>

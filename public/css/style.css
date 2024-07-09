@@ -188,6 +188,11 @@ body {
   }
 
 /* ADD DOCTOR */
+.add-doctor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .container-doctor {
     width: 80%;
     max-width: 600px;
@@ -198,8 +203,9 @@ body {
     flex-direction: column;
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
-
 .logo-doctor {
     width: 200px;
     height: auto;
@@ -688,7 +694,6 @@ h1 {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    padding-top: 150px;
 }
 
 .virtual-account-text {
@@ -704,6 +709,10 @@ h1 {
 .virtual-account h3 {
     font-weight: bold;
     margin: 5px 0;
+}
+
+.data{
+    height: 500px;
 }
 
 .tabs {
@@ -748,6 +757,7 @@ h1 {
 
 
 /* DASHBOARD DOCTOR */
+      
 .ha-header {
     background-color: var(--clr-bm); /* Menggunakan variabel dari root CSS */
     color: var(--clr-wth);
@@ -822,7 +832,7 @@ h1 {
 
 .ha-content {
     padding: 20px;
-    margin-left: 220px;
+    margin-left: 240px; /* Menambahkan jarak ke sebelah kiri */
     margin-top: 160px; 
     max-width: calc(100% - 240px); 
 }
@@ -885,6 +895,18 @@ h1 {
 
 .ha-button:hover {
     background-color: #128700;
+}
+
+.ha-edit-form {
+    display: none;
+    margin-top: 20px;
+}
+
+.ha-edit-form input, .ha-edit-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--clr-bord);
 }
 
 
