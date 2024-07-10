@@ -1,5 +1,7 @@
 import multer from "multer";
 import path from "path";
+// import bcrypt from 'bcrypt';
+// import jwt from 'jsonwebtoken';
 import Doctor from "../models/doctor_model.js";
 import { fileURLToPath } from 'url';
 
@@ -44,23 +46,6 @@ export const getDoctors = async (req, res) => {
     }
 };
 
-// export const getDoctorsById = async (req, res) => {
-//     try {
-//         const username = req.params.username;
-//         if (!username) {
-//             return res.status(400).send('Username parameter is missing or invalid');
-//         }
-//         const doctor = await Doctor.findOne({where: {username:username}});
-//         if (!doctor) {
-//             return res.status(404).send('Doctor not found');
-//         }
-//         res.render('dashboard_doctor', { doctor }); 
-//     } catch (error) {
-//         console.error(error);
-//         res.status(500).send('Terjadi kesalahan(dc_gdby)');
-//     }
-// };
-
 export const createDoctors = async (req, res) => {
     try {
         const { username, password, email, no_hp, kabupaten, klinik, alamat, info } = req.body;
@@ -104,20 +89,40 @@ export const deleteDoctors = async (req, res) => {
     }
 };
 
-export const getDoctorProfile = async (req, res) => {
-    try {
-        const doctor = await Doctor.findOne({ where: { id: req.params.id } });
-        res.render('doctor_profile', { doctor });
-    } catch (error) {
-        console.log(error.message);
-    }
-};
+// export const getDoctorProfile = async (req, res) => {
+//     try {
+//         const doctor = await Doctor.findOne({ where: { id: req.params.id } });
+//         res.render('doctor_profile', { doctor });
+//     } catch (error) {
+//         console.log(error.message);
+//     }
+// };
 
 export const updateDoctorProfile = async (req, res) => {
     try {
-        const updatedDoctor = req.body;
-        await Doctor.update(updatedDoctor, { where: { id: req.params.id } });
-        res.json({ success: true });
+        const { id, username, ttl, alamat, klinik, spesialis, pendidikan, keanggotaan, afiliasi, bahasaint, bahasa, perkenalan } = doctorData;
+
+         // Cari dan update dokter berdasarkan id
+         const updatedDoctor = await Doctor.findByPk(id);
+         if (!updatedDoctor) {
+             throw new Error('Doctor not found');
+         }
+ 
+         await updatedDoctor.update({
+             username,
+             ttl,
+             alamat,
+             klinik,
+             spesialis,
+             pendidikan,
+             keanggotaan,
+             afiliasi,
+             bahasaint,
+             bahasa,
+             perkenalan
+         });
+ 
+         return updatedDoctor;
     } catch (error) {
         console.log(error.message);
         res.json({ success: false, error: error.message });

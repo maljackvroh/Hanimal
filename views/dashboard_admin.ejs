@@ -188,10 +188,7 @@
       <ul>
         <li><a href="#" class="ha-doctor-list-link">Doctor List</a></li>
         <li>
-          <a href="#" class="ha-penanganan-link">Tambah Laporan Penanganan & Tindak Lanjut</a>
-        </li>
-        <li>
-          <a href="#" class="ha-rekam-medis-link">Tambah Laporan Rekam Medis</a>
+          <a href="#" class="ha-penanganan-link">Rekam Medis</a>
         </li>
       </ul>
     </div>
@@ -316,6 +313,30 @@
           }
         });
       });
+      function toggleEditPanel(doctorsId) {
+            const editPanel = document.getElementById('editPanel_' + userId);
+            editPanel.classList.toggle('active');
+        }
+
+        function closeEditPanel(doctorsId) {
+            document.getElementById('editPanel_' + doctorsId).classList.remove('active');
+        }
+
+        function updateUser(doctorsId) {
+            const formData = new FormData(document.querySelector(`#editPanel_${userId} .editForm`));
+
+            fetch(`/users/${userId}`, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.message);
+                closeEditPanel(userId); // Close edit panel after successful update
+                // Optionally, reload the page or update the user list
+            })
+            .catch(error => console.error('Error updating user:', error));
+        }
     </script>
   </body>
 </html>

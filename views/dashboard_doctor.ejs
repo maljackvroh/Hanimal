@@ -18,7 +18,7 @@
       <img src="images\logo-hanimal.png" alt="Healthy Animal" />
     </div>
     <div class="ha-logout">
-      <a href="/homepage">Logout</a>
+      <a href="/logout">Logout</a>
     </div>
   </div>
   <div class="ha-sidebar">
@@ -32,30 +32,70 @@
     <div id="biodata" class="ha-biodata active" method="get">
       <dl>
           <dt>Nama</dt>
-          <dd>Tidak Tersedia</dd>
+          <dd><%= doctor.username %></dd>
           <dt>Tanggal lahir</dt>
-          <dd>Tidak Tersedia</dd>
+          <dd><%= doctor.ttl %></dd>
           <dt>Alamat</dt>
-          <dd>Tidak tersedia</dd>
+          <dd><%= doctor.alamat %></dd>
           <dt>Tempat Praktik</dt>
-          <dd>Tidak Tersedia</dd>
+          <dd><%= doctor.klinik %></dd>
           <dt>Spesialisasi</dt>
-          <dd>Tidak Tersedia</dd>
+          <dd><%= doctor.spesialis %></dd>
           <dt>Pendidikan</dt>
-          <dd>Tidak Tersedia</dd>
+          <dd><%= doctor.pendidikan %></dd>
           <dt>Keanggotaan Profesional</dt>
-          <dd>Tidak Tersedia</dd>
+          <dd><%= doctor.keanggotaan %></dd>
           <dt>Afiliasi Rumah Sakit</dt>
-          <dd>Tidak Tersedia</dd>
+          <dd><%= doctor.afiliasi %></dd>
           <dt>Bahasa Internasional</dt>
-          <dd>Tidak Tersedia</dd>
+          <dd><%= doctor.bahasaint %></dd>
           <dt>Bahasa Daerah</dt>
-          <dd>Tidak Tersedia</dd>
+          <dd><%= doctor.bahasa %></dd>
           <dt>Perkenalan Singkat</dt>
-          <dd>Tidak Tersedia</dd>
+          <dd><%= doctor.perkenalan %></dd>
       </dl>
       <button class="ha-button" id="edit-button">Edit</button>
-    </div>    
+    </div>
+    <form id="edit-form" class="ha-edit-form" action="/update_doctor" method="post" >
+      <input type="hidden" name="id" value="<%= doctor.id %>">
+      
+      <label for="username">Nama</label>
+      <input type="text" id="username" name="username" value="<%= doctor.username || '' %>" />
+      
+      <label for="ttl">Tanggal Lahir</label>
+      <input type="date" id="ttl" name="ttl" value="<%= doctor.ttl || '' %>" />
+      
+      <label for="alamat">Alamat</label>
+      <input type="text" id="alamat" name="alamat" value="<%= doctor.alamat || '' %>" />
+      
+      <label for="klinik">Tempat Praktik</label>
+      <input type="text" id="klinik" name="klinik" value="<%= doctor.klinik || '' %>" />
+      
+      <label for="spesialis">Spesialisasi</label>
+      <input type="text" id="spesialis" name="spesialis" value="<%= doctor.spesialis || '' %>" />
+      
+      <label for="pendidikan">Pendidikan</label>
+      <input type="text" id="pendidikan" name="pendidikan" value="<%= doctor.pendidikan || '' %>" />
+      
+      <label for="keanggotaan">Keanggotaan Profesional</label>
+      <input type="text" id="keanggotaan" name="keanggotaan" value="<%= doctor.keanggotaan || '' %>" />
+      
+      <label for="afiliasi">Afiliasi Rumah Sakit</label>
+      <input type="text" id="afiliasi" name="afiliasi" value="<%= doctor.afiliasi || '' %>" />
+      
+      <label for="bahasaint">Bahasa Internasional</label>
+      <input type="text" id="bahasaint" name="bahasaint" value="<%= doctor.bahasaint || '' %>" />
+      
+      <label for="bahasa">Bahasa Daerah</label>
+      <input type="text" id="bahasa" name="bahasa" value="<%= doctor.bahasa || '' %>" />
+      
+      <label for="perkenalan">Perkenalan Singkat</label>
+      <textarea id="perkenalan" name="perkenalan"><%= doctor.perkenalan || '' %></textarea>
+      
+      <button type="submit" class="ha-button">Simpan</button>
+      <button type="button" class="ha-button" id="cancel-button">Batal</button>
+    </form>
+
     <div id="penanganan" class="ha-penanganan">
       <button class="ha-button">Tambah Laporan</button>
       <table class="ha-table">

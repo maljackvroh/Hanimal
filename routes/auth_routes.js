@@ -49,16 +49,31 @@ router.post('/login_doctor', async (req, res) => {
     try {
         const doctor = await Doctor.findOne({ where: { username: username } });
 
-        // if (!doctor) {
-        //     return res.status(404).json({ message: 'Doctor not found' });
-        // }
-
+        if (!doctor) {
+            return res.status(401).json({ message: 'Username not found' });
+        }
+          
         const match = await bcrypt.compare(password, doctor.password);
         if (!match) {
             return res.status(401).json({ message: 'Incorrect password' });
         }
         
-        // req.session.doctor = doctor;
+         // Simpan informasi dokter dalam sesi
+        req.session.doctor = {
+            id: doctor.id,
+            username: doctor.username,
+            ttl: doctor.ttl,
+            alamat: doctor.alamat,
+            klinik: doctor.klinik,
+            spesialis: doctor.spesialis,
+            pendidikan: doctor.pendidikan,
+            keanggotaan: doctor.keanggotaan,
+            afiliasi: doctor.afiliasi,
+            bahasaint: doctor.bahasaint,
+            bahasa: doctor.bahasa,
+            perkenalan: doctor.perkenalan,
+        };
+             
         res.redirect('dashboard_doctor');
     } catch (error) {
         console.error('Error logging in:', error);

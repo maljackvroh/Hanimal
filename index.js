@@ -10,6 +10,7 @@ import SequelizeStore from 'connect-session-sequelize';
 import session  from "express-session";
 import { fileURLToPath } from "url";
 import db from './config/database.js';
+import Doctor from "./models/doctor_model.js";
 
 const app = express();
 const PORT = 3000;
@@ -48,7 +49,6 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(DoctorRoute);
 app.use(UserRoute);
 app.use(AuthRoute);
-// app.use(invoiceRoute);
 
 
 app.get('/aboutus', (req, res) => {
@@ -84,7 +84,18 @@ app.get('/dashboard_admin', (req, res) => {
 });
 
 app.get('/dashboard_doctor', (req, res) => {
-    res.render('dashboard_doctor');
+    const doctor = req.session.doctor;
+    res.render('dashboard_doctor', {doctor});
+});
+
+app.get('/logout', (req, res) => {
+    req.session.destroy((err) => {
+        if (err) {
+            console.log(err);
+        } else {
+            res.redirect('homepage'); // Redirect to login page after logout
+        }
+    });
 });
 
 app.get('/pelayanan', (req, res) => {
