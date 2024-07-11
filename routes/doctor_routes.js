@@ -77,7 +77,13 @@ router.post('/edit/:id', async (req, res) => {
             return res.status(404).json({ message: 'Dokter tidak ditemukan' });
         }
 
-        res.redirect('/dashboard_doctor');
+        const updatedDoctor = await Doctor.findByPk(req.params.id);
+        
+        req.session.doctor = updatedDoctor;
+
+        res.json(updatedDoctor);        
+        // res.redirect('/dashboard_doctor');
+
     } catch (err) {
         console.error(err);
         res.status(500).json({ message: 'Terjadi kesalahan saat mengupdate dokter' });
