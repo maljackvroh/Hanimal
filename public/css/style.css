@@ -1,973 +1,985 @@
 :root {
-    --clr-bm: #97d2f0; /* Light Blue */
-    --clr-am: #d9d9d9; /* Light Grey */
-    --clr-bt: #015478; /* Dark Blue */
-    --clr-at: #677483; /* Medium Grey */
-    --clr-ijo: #18ad00; /* Green */
-    --clr-wth: #ffffff; /* White */
-    --clr-blk: #000000; /* Black */
-    --clr-bord: #d0d0d0; /* Border Grey */
-    --clr-text: #666666; /* Text Grey */
+  --clr-bm: #97d2f0; /* Light Blue */
+  --clr-am: #d9d9d9; /* Light Grey */
+  --clr-bt: #015478; /* Dark Blue */
+  --clr-at: #677483; /* Medium Grey */
+  --clr-ijo: #18ad00; /* Green */
+  --clr-wth: #ffffff; /* White */
+  --clr-blk: #000000; /* Black */
+  --clr-bord: #d0d0d0; /* Border Grey */
+  --clr-text: #666666; /* Text Grey */
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: var(--clr-wth);
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--clr-wth);
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
 /* HEADER */
 .nav-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 15%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #fff; /* Sesuaikan dengan warna background yang diinginkan */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan jika diperlukan */
-    z-index: 1000; /* Pastikan navbar berada di atas elemen lainnya */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 15%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff; /* Sesuaikan dengan warna background yang diinginkan */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan jika diperlukan */
+  z-index: 1000; /* Pastikan navbar berada di atas elemen lainnya */
 }
 
 .nav-bar .logo img {
-    height: 85%;
-    display: block;
-    margin: auto;
+  height: 85%;
+  display: block;
+  margin: auto;
 }
 
 .nav-list {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    padding-right: 50px;
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  padding-right: 50px;
 }
 
 .nav-list li a {
-    text-decoration: none;
-    color: #015478;
-    transition: color 0.3s;
+  text-decoration: none;
+  color: #015478;
+  transition: color 0.3s;
 }
 
 .nav-list li a:hover {
-    color: #018ad1; /* Sesuaikan dengan warna hover yang diinginkan */
+  color: #018ad1; /* Sesuaikan dengan warna hover yang diinginkan */
 }
 
 #menu__btn {
-    display: none; /* Sembunyikan tombol menu untuk tampilan desktop */
+  display: none; /* Sembunyikan tombol menu untuk tampilan desktop */
 }
 
 /* Responsive styling */
 @media (max-width: 768px) {
-    .nav-bar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+  .nav-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-    .nav-list {
-        flex-direction: column;
-        width: 100%;
-        display: none;
-    }
+  .nav-list {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+  }
 
-    .nav-list li {
-        width: 100%;
-        text-align: center;
-        padding: 10px 0;
-    }
+  .nav-list li {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
 
-    #menu__btn {
-        display: block;
-        cursor: pointer;
-    }
+  #menu__btn {
+    display: block;
+    cursor: pointer;
+  }
 
-    .nav-bar.active .nav-list {
-        display: flex;
-    }
+  .nav-bar.active .nav-list {
+    display: flex;
+  }
 }
 
 /* ABOUT US */
-#about, #profil-team {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 20px 0;
-    padding-top: 130px;
-  }
-  
-  .about-hanimal, .profil-team {
-    width: 100%;
-    max-width: 1200px;
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .about-section, .gambar-section {
-    flex: 1;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: left;
-  }
-  
-  .about-section h4, .gambar-section h4 {
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .about-section p {
-    line-height: 1.8;
-  }
-  
-  .gambar-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .gambar-section img {
-    max-width: 100%;
-    height: auto;
-  }
-  
+#about,
+#profil-team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* padding: 50px 0; */
+  padding-top: 110px;
+}
+
+.about-hanimal,
+.profil-team {
+  width: 100%;
+  max-width: 1200px;
+  /* padding: 20px; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.about-section,
+.gambar-section {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+}
+
+.about-section h4,
+.gambar-section h4 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.about-section p {
+  line-height: 1.8;
+}
+
+.gambar-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gambar-section img {
+  max-width: 100%;
+  height: auto;
+}
+
+.profil-team {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.dospem img,
+.team img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.team > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.team p {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .about-hanimal,
   .profil-team {
     flex-direction: column;
     align-items: center;
-    text-align: center;
   }
-  
-  .dospem img, .team img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-  }
-  
+
+  .about-section,
+  .gambar-section,
+  .dospem,
   .team {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    width: 100%;
+    padding: 10px;
   }
-  
-  .team > div {
-    display: flex;
+
+  .team {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    gap: 10px;
   }
-  
-  .team p {
-    margin-top: 5px;
-    font-size: 14px;
-  }
-  
-  @media (max-width: 768px) {
-    .about-hanimal, .profil-team {
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .about-section, .gambar-section, .dospem, .team {
-      width: 100%;
-      padding: 10px;
-    }
-    
-    .team {
-      flex-direction: column;
-      gap: 10px;
-    }
-  }
+}
 
 /* ADD DOCTOR */
 .add-doctor {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .container-doctor {
-    width: 80%;
-    max-width: 600px;
-    background-color: var(--clr-wth);
-    border-radius: 8px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-    margin-bottom: 20px;
+  width: 80%;
+  max-width: 600px;
+  background-color: var(--clr-wth);
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .logo-doctor {
-    width: 200px;
-    height: auto;
-    margin-bottom: 20px;
+  width: 200px;
+  height: auto;
+  margin-bottom: 20px;
 }
 
 .divider {
-    width: 100%;
-    height: 4px; 
-    background-color: var(--clr-ijo);
-    margin: 20px 0; 
+  width: 100%;
+  height: 4px;
+  background-color: var(--clr-ijo);
+  margin: 20px 0;
 }
 
 .container-doctor h1 {
-    color: var(--clr-bt);
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-align: center;
+  color: var(--clr-bt);
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .form-group-doctor {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 15px;
 }
 
 .input-group-doctor {
-    display: flex;
-    flex-direction: column;
-    width: 48%;
+  display: flex;
+  flex-direction: column;
+  width: 48%;
 }
 
 .input-group-doctor label {
-    color: var(--clr-text);
-    margin-bottom: 5px;
+  color: var(--clr-text);
+  margin-bottom: 5px;
 }
 
 .input-group-doctor input {
-    padding: 8px;
-    border: 1px solid var(--clr-bord);
-    border-radius: 4px;
-    font-size: 14px;
+  padding: 8px;
+  border: 1px solid var(--clr-bord);
+  border-radius: 4px;
+  font-size: 14px;
 }
 
 .input-group-doctor input[type="file"] {
-    padding: 8px 0;
+  padding: 8px 0;
 }
 
 button[type="submit"] {
-    background-color: var(--clr-ijo);
-    color: var(--clr-wth);
-    font-weight: bold;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    display: block; 
-    margin: 20px auto 0 auto; 
+  background-color: var(--clr-ijo);
+  color: var(--clr-wth);
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 20px auto 0 auto;
 }
 
-
 button[type="submit"]:hover {
-    background-color: var(--clr-am);
-    color: var(--clr-blk);
+  background-color: var(--clr-am);
+  color: var(--clr-blk);
 }
 
 .login-link-doctor {
-    margin-top: 20px; 
-    color: var(--clr-text);
-    font-size: 14px;
-    text-align: center;
+  margin-top: 20px;
+  color: var(--clr-text);
+  font-size: 14px;
+  text-align: center;
 }
 
 .login-link-doctor a {
-    color: var(--clr-bt);
-    text-decoration: none;
+  color: var(--clr-bt);
+  text-decoration: none;
 }
 
 .login-link-doctor a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
-  
 /* PELAYANAN */
 .search-section {
-    background-image: url("../images/pelayanan-1.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top;
-    height: auto;
-    min-height: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 50px 0;
-    padding-top: 130px;
-    color: #2c3e50;
-  }
-  
-  .breadcrumb-container {
-    margin-bottom: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    padding-left: 50px;
-  }
-  
-  .breadcrumb {
-    background-color: transparent;
-    padding: 0;
-    list-style: none;
-  }
-  
-  .breadcrumb-item {
-    display: inline-block;
-    margin-right: 10px;
-  }
-  
-  .breadcrumb-item a {
-    color: #2c3e50;
-    text-decoration: none;
-    font-weight: 500;
-  }
-  
-  .breadcrumb-item.active {
-    color: #3498db;
-  }
-  
-  h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-  }
-  
-  .search-container {
-    display: flex;
-    align-items: center;
-    background-color: white;
-    padding: 10px;
-    border-radius: 5px;
-    width: 400px;
-  }
-  
-  .search-container i {
-    margin-right: 10px;
-    color: #2c3e50;
-  }
-  
-  .search-container input {
-    border: none;
-    padding: 8px;
-    width: 100%;
-    font-size: 16px;
-  }
-  
-  button {
-    background-color: #2ecc71;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    margin-top: 20px;
-    font-weight: 600;
-    cursor: pointer;
-  }
+  background-image: url("../images/pelayanan-1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  height: auto;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0;
+  padding-top: 130px;
+  color: #2c3e50;
+}
 
+.breadcrumb-container {
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 50px;
+}
+
+.breadcrumb {
+  background-color: transparent;
+  padding: 0;
+  list-style: none;
+}
+
+.breadcrumb-item {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.breadcrumb-item a {
+  color: #2c3e50;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.breadcrumb-item.active {
+  color: #3498db;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  width: 400px;
+}
+
+.search-container i {
+  margin-right: 10px;
+  color: #2c3e50;
+}
+
+.search-container input {
+  border: none;
+  padding: 8px;
+  width: 100%;
+  font-size: 16px;
+}
+
+button {
+  background-color: #2ecc71;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
 
 /* LOGIN PORTAL CONTAINER */
 .portal-container-custom {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .portal-container-custom {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .divider {
-    width: 100%;
-    height: 4px; 
-    background-color: var(--clr-ijo);
-    margin: 20px 0; 
+  width: 100%;
+  height: 4px;
+  background-color: var(--clr-ijo);
+  margin: 20px 0;
 }
 
 .login-box-custom {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80%;
-    max-width: 400px;
-    padding: 20px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-    gap: 20px;
-    text-align: center;
-    border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  max-width: 400px;
+  padding: 20px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  gap: 20px;
+  text-align: center;
+  border-radius: 10px;
 }
 
 h1.custom-heading {
-    color: var(--clr-bt);
-    margin: 10px 0;
+  color: var(--clr-bt);
+  margin: 10px 0;
 }
 
 p.custom-paragraph {
-    color: var(--clr-at);
-    margin: 10px 0;
+  color: var(--clr-at);
+  margin: 10px 0;
 }
 
 .buttons-custom {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 50px;
 }
 
 button.custom-button {
-    background-color: var(--clr-bm);
-    color: var(--clr-blk);
-    font-weight: bold;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-    border-radius: 10px;
-    flex: 1;
-    margin: 0 5px;
-    box-sizing: border-box;
+  background-color: var(--clr-bm);
+  color: var(--clr-blk);
+  font-weight: bold;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 10px;
+  flex: 1;
+  margin: 0 5px;
+  box-sizing: border-box;
 }
 
 button.custom-button:hover {
-    background-color: var(--clr-bord);
-    color: var(--clr-blk);
+  background-color: var(--clr-bord);
+  color: var(--clr-blk);
 }
 
 button.back-button-custom {
-    background-color: var(--clr-ijo);
-    color: var(--clr-wth);
-    font-size: 18px;
-    padding: 15px 25px;
-    cursor: pointer;
-    border-radius: 10px;
-    margin-top: 20px;
-    transition: background-color 0.3s, color 0.3s;
-    border: none;
+  background-color: var(--clr-ijo);
+  color: var(--clr-wth);
+  font-size: 18px;
+  padding: 15px 25px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-top: 20px;
+  transition: background-color 0.3s, color 0.3s;
+  border: none;
 }
 button.back-button-custom:hover {
-    background-color: var(--clr-bord);
-    color: var(--clr-blk);
+  background-color: var(--clr-bord);
+  color: var(--clr-blk);
 }
 
 /* PELAYANAN CARD*/
 .pelayanan-container {
-    display: grid;
-    /* flex-direction: column; */
-    /* align-items: center; */
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    justify-content: center;
-    /* padding: 50px; */
-  }
+  display: grid;
+  /* flex-direction: column; */
+  /* align-items: center; */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  justify-content: center;
+  /* padding: 50px; */
+}
 
 .card {
-    background-color: #d9d9d9;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-    padding: 20px;
-    /* width: 250px; */
-    display: flex;
-    align-items: center;
-    text-align: center;
-    position: relative;
+  background-color: #d9d9d9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 20px;
+  /* width: 250px; */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  position: relative;
 }
 
 .doctor-image img {
-    /* display: none; */
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    margin-bottom: 10px;
+  /* display: none; */
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-bottom: 10px;
 }
 .card-info {
-    flex: 1;
-    margin-top: 20px;
+  flex: 1;
+  margin-top: 20px;
 }
 .card h2 {
-    font-size: 1.2em;
-    margin: 0 0 10px;
-    color: #333;
+  font-size: 1.2em;
+  margin: 0 0 10px;
+  color: #333;
 }
 
 .card p {
-    margin: 0 0 10px;
-    color: #777;
+  margin: 0 0 10px;
+  color: #777;
 }
 
 .buttons {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
 }
 
 .buttons button {
-    background-color: white;
-    color: black;
-    font-weight: bold;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 }
 .buttons button:hover {
-    background-color: #18ad00;
-    color: white;
+  background-color: #18ad00;
+  color: white;
 }
-    
+
 /* ADMIN LOGIN */
 .admin-login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .login-box {
-    background-color: var(--clr-wth);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    width: 300px;
-    box-sizing: border-box;
+  background-color: var(--clr-wth);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 300px;
+  box-sizing: border-box;
 }
 
 .logo {
-    width: 250px;
+  width: 250px;
 }
 
 h1 {
-    color: var(--clr-bt);
-    font-size: 1em;
-    margin-bottom: 20px;
+  color: var(--clr-bt);
+  font-size: 1em;
+  margin-bottom: 20px;
 }
 
 .input-group {
-    margin-bottom: 15px;
-    text-align: left;
+  margin-bottom: 15px;
+  text-align: left;
 }
 
 .input-group label {
-    /* display: block; */
-    color: var(--clr-at);
-    margin-bottom: 5px;
+  /* display: block; */
+  color: var(--clr-at);
+  margin-bottom: 5px;
 }
 
 .input-group input {
-    width: calc(100% - 22px); 
-    padding: 10px;
-    border: 1px solid var(--clr-bm);
-    border-radius: 4px;
-    background-color: var(--clr-bm);
+  width: calc(100% - 22px);
+  padding: 10px;
+  border: 1px solid var(--clr-bm);
+  border-radius: 4px;
+  background-color: var(--clr-bm);
 }
 
 .login-button {
-    background-color: var(--clr-ijo);
-    color: var(--clr-wth);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1em;
+  background-color: var(--clr-ijo);
+  color: var(--clr-wth);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
 }
 
 .login-button:hover {
-    background-color: darken(var(--clr-ijo), 10%);
+  background-color: darken(var(--clr-ijo), 10%);
 }
 
 .signup-link {
-    margin-top: 20px;
-    color: var(--clr-text);
+  margin-top: 20px;
+  color: var(--clr-text);
 }
 
 .signup {
-    color: var(--clr-bt);
-    text-decoration: none;
+  color: var(--clr-bt);
+  text-decoration: none;
 }
 
 .signup:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* DOCTOR LOGIN */
 .doktor-login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .doktor-login-box {
-    background-color: var(--clr-wth);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    width: 300px;
-    box-sizing: border-box;
+  background-color: var(--clr-wth);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 300px;
+  box-sizing: border-box;
 }
 
 .doktor-logo {
-    width: 250px;
+  width: 250px;
 }
 
 .doktor-heading {
-    color: var(--clr-bt);
-    font-size: 1em;
-    margin-bottom: 20px;
+  color: var(--clr-bt);
+  font-size: 1em;
+  margin-bottom: 20px;
 }
 
 .doktor-input-group {
-    margin-bottom: 15px;
-    text-align: left;
+  margin-bottom: 15px;
+  text-align: left;
 }
 
 .doktor-input-group label {
-    color: var(--clr-at);
-    margin-bottom: 5px;
+  color: var(--clr-at);
+  margin-bottom: 5px;
 }
 
 .doktor-input-group input {
-    width: calc(100% - 22px); 
-    padding: 10px;
-    border: 1px solid var(--clr-bm);
-    border-radius: 4px;
-    background-color: var(--clr-bm);
+  width: calc(100% - 22px);
+  padding: 10px;
+  border: 1px solid var(--clr-bm);
+  border-radius: 4px;
+  background-color: var(--clr-bm);
 }
 
 .doktor-login-button {
-    background-color: var(--clr-ijo);
-    color: var(--clr-wth);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1em;
+  background-color: var(--clr-ijo);
+  color: var(--clr-wth);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
 }
 
 .doktor-login-button:hover {
-    background-color: var(--clr-am);
-    color: var(--clr-blk);
+  background-color: var(--clr-am);
+  color: var(--clr-blk);
 }
 
 .doktor-signup-link {
-    color: var(--clr-text);
-    font-size: 0.8em;
+  color: var(--clr-text);
+  font-size: 0.8em;
 }
 
 .doktor-signup {
-    color: var(--clr-bt);
-    text-decoration: none;
+  color: var(--clr-bt);
+  text-decoration: none;
 }
 
 .doktor-signup:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
-
 
 /* CARA BAYAR */
 .virtual-account {
-    background-color: var(--clr-bord);
-    padding: 70px;
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+  background-color: var(--clr-bord);
+  padding: 70px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .virtual-account-text {
-    text-align: left;
-    flex-grow: 1;
+  text-align: left;
+  flex-grow: 1;
 }
 
 .virtual-account img {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
 .virtual-account h2,
 .virtual-account h3 {
-    font-weight: bold;
-    margin: 5px 0;
+  font-weight: bold;
+  margin: 5px 0;
 }
 
-.data{
-    height: 500px;
+.data {
+  height: 500px;
 }
 
 .tabs {
-    display: flex;
-    margin-bottom: 20px;
+  display: flex;
+  margin-bottom: 20px;
 }
 
 .tabs button {
-    padding: 10px 20px;
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-    font-weight: bold;
-    color: var(--clr-blk);
-    outline: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  color: var(--clr-blk);
+  outline: none;
 }
 
 .tabs button.active {
-    color: var(--clr-bt);
+  color: var(--clr-bt);
 }
 
 .tabs button:hover {
-    color: var(--clr-bt);
+  color: var(--clr-bt);
 }
 
 .tab-content {
-    display: none;
-    border: none;
+  display: none;
+  border: none;
 }
 
 .tab-content.active {
-    display: block;
+  display: block;
 }
 
 .instructions {
-    padding: 20px;
+  padding: 20px;
 }
 
 .instructions h3 {
-    font-weight: bold;
+  font-weight: bold;
 }
 
-
 /* DASHBOARD DOCTOR */
-      
+
 .ha-header {
-    background-color: var(--clr-bm); /* Menggunakan variabel dari root CSS */
-    color: var(--clr-wth);
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    height: 80px; /* Sesuaikan ukuran header */
+  background-color: var(--clr-bm); /* Menggunakan variabel dari root CSS */
+  color: var(--clr-wth);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 80px; /* Sesuaikan ukuran header */
 }
 
 .ha-header .ha-logo {
-    text-align: center;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .ha-logout {
-    padding-right: 20px; /* Menambah padding kanan untuk logout */
+  padding-right: 20px; /* Menambah padding kanan untuk logout */
 }
 
 .ha-logout a {
-    color: var(--clr-wth);
-    text-decoration: none;
-    font-weight: bold;
-    padding: 5px 10px; /* Menambah padding pada link logout */
+  color: var(--clr-wth);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px; /* Menambah padding pada link logout */
 }
 
 .ha-sidebar {
-    width: 200px;
-    background-color: var(--clr-bm);
-    padding: 20px;
-    border-right: 1px solid var(--clr-bord);
-    height: calc(100vh - 80px); 
-    position: fixed;
-    top: 100px; 
-    left: 0;
-    color: var(--clr-blk);
+  width: 200px;
+  background-color: var(--clr-bm);
+  padding: 20px;
+  border-right: 1px solid var(--clr-bord);
+  height: calc(100vh - 80px);
+  position: fixed;
+  top: 100px;
+  left: 0;
+  color: var(--clr-blk);
 }
 
 .ha-sidebar .ha-logo {
-    text-align: center;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .ha-sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .ha-sidebar li {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .ha-sidebar a {
-    text-decoration: none;
-    color: var(--clr-blk);
-    display: block;
-    padding: 10px;
-    font-weight: bold;
-    border: 1px solid transparent;
+  text-decoration: none;
+  color: var(--clr-blk);
+  display: block;
+  padding: 10px;
+  font-weight: bold;
+  border: 1px solid transparent;
 }
 
-.ha-sidebar a.active, .ha-sidebar a:hover {
-    background-color: var(--clr-ijo);
-    color: var(--clr-wth);
-    border-color: var(--clr-ijo);
+.ha-sidebar a.active,
+.ha-sidebar a:hover {
+  background-color: var(--clr-ijo);
+  color: var(--clr-wth);
+  border-color: var(--clr-ijo);
 }
 
 .ha-content {
-    padding: 20px;
-    margin-left: 240px; /* Menambahkan jarak ke sebelah kiri */
-    margin-top: 160px; 
-    max-width: calc(100% - 240px); 
+  padding: 20px;
+  margin-left: 240px; /* Menambahkan jarak ke sebelah kiri */
+  margin-top: 160px;
+  max-width: calc(100% - 240px);
 }
 
-.ha-biodata, .ha-penanganan, .ha-rekam-medis {
-    display: none;
+.ha-biodata,
+.ha-penanganan,
+.ha-rekam-medis {
+  display: none;
 }
 
-.ha-biodata.active, .ha-penanganan.active, .ha-rekam-medis.active {
-    display: block;
+.ha-biodata.active,
+.ha-penanganan.active,
+.ha-rekam-medis.active {
+  display: block;
 }
 
 .ha-biodata dl {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .ha-biodata dl dt {
-    font-weight: bold;
-    padding-top: 10px;
+  font-weight: bold;
+  padding-top: 10px;
 }
 
 .ha-biodata dl dd {
-    padding-bottom: 10px;
-    margin-left: 20px;
+  padding-bottom: 10px;
+  margin-left: 20px;
 }
 
 .ha-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
 
 .ha-table thead {
-    background-color: var(--clr-at);
-    color: var(--clr-blk);
+  background-color: var(--clr-at);
+  color: var(--clr-blk);
 }
 
-.ha-table th, .ha-table td {
-    border: 1px solid var(--clr-bord);
-    padding: 8px;
-    text-align: left;
+.ha-table th,
+.ha-table td {
+  border: 1px solid var(--clr-bord);
+  padding: 8px;
+  text-align: left;
 }
 
 .ha-table tbody tr:nth-child(odd) {
-    background-color: var(--clr-wth);
+  background-color: var(--clr-wth);
 }
 
 .ha-table tbody tr:nth-child(even) {
-    background-color: var(--clr-am);
+  background-color: var(--clr-am);
 }
 
 .ha-button {
-    margin-right: 5px;
-    padding: 5px 10px;
-    background-color: var(--clr-ijo);
-    color: var(--clr-wth);
-    border: none;
-    cursor: pointer;
+  margin-right: 5px;
+  padding: 5px 10px;
+  background-color: var(--clr-ijo);
+  color: var(--clr-wth);
+  border: none;
+  cursor: pointer;
 }
 
 .ha-button:hover {
-    background-color: #128700;
+  background-color: #128700;
 }
 
 .ha-edit-form {
-    display: none;
-    margin-top: 20px;
+  display: none;
+  margin-top: 20px;
 }
 
-.ha-edit-form input, .ha-edit-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid var(--clr-bord);
+.ha-edit-form input,
+.ha-edit-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid var(--clr-bord);
 }
-
 
 /* PESAN */
 .tarif-container {
-    max-width: 960px;
-    margin: 20px auto;
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding-top: 100px;
-  }
+  max-width: 960px;
+  margin: 20px auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding-top: 100px;
+}
 
-  h1.tarif-title, h2.tarif-title, h3.tarif-title {
-    text-align: center;
-    margin-bottom: 20px;
-  }
+h1.tarif-title,
+h2.tarif-title,
+h3.tarif-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-  .tarif-frame {
-    padding: 10px;
-    border-radius: 5px;
-    background-color: var(--clr-bm);
-    margin-bottom: 20px;
-  }
+.tarif-frame {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: var(--clr-bm);
+  margin-bottom: 20px;
+}
 
-  table.tarif-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
+table.tarif-table {
+  width: 100%;
+  border-collapse: collapse;
+}
 
-  th.tarif-th, td.tarif-td {
-    text-align: left;
-    padding: 8px;
-    border: 1px solid var(--clr-blk);
-  }
+th.tarif-th,
+td.tarif-td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid var(--clr-blk);
+}
 
-  .tarif-selectable {
-    cursor: pointer;
-  }
+.tarif-selectable {
+  cursor: pointer;
+}
 
-  .tarif-selectable:hover {
-    background-color: #f2f2f2;
-  }
+.tarif-selectable:hover {
+  background-color: #f2f2f2;
+}
 
-  .selected-tarif {
-    background-color: var(--clr-bt);
-    color: white;
-  }
+.selected-tarif {
+  background-color: var(--clr-bt);
+  color: white;
+}
 
-  .tarif-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: var(--clr-ijo);
-    color: var(--clr-wth);
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
-  }
+.tarif-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--clr-ijo);
+  color: var(--clr-wth);
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+}
 
-  .tarif-button:hover {
-    background-color: var(--clr-bord);
-    color: var(--clr-blk);
-  }
+.tarif-button:hover {
+  background-color: var(--clr-bord);
+  color: var(--clr-blk);
+}

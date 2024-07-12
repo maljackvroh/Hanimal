@@ -29,9 +29,6 @@ body {
     background-color: #f4f4f4;
 }
 
-
-
-
 /* login portal */
 .login-box {
     background-color: white;
@@ -98,7 +95,6 @@ button:hover {
     background-color: #218838;
 }
 
-
 /* homepage */
 .nav__bar {
   display: flex;
@@ -153,11 +149,6 @@ hr {
   height: 100%;
   width: 100%;
   padding: 20px;
-  /* flex-grow: 1;
-  display: flex; */
-  /* width: 100%;
-  height: 100%; */
-  /* margin-top: 20px;*/
 }
 .profil-container .sidebar {
   width: 260px;
@@ -194,12 +185,8 @@ hr {
 }
 
 .main-content {
-  /* grid-template-columns: repeat(2, 1fr);
-  flex-grow: 1; */
   display: flex;
   background-color: #ffffff;
-  /* padding: 20px; */
-  /* margin-left: 20px; */
 }
 .main-content img {
   width: 150px;
@@ -224,77 +211,14 @@ hr {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding: 16.1rem 5rem;
-  /* padding-top: 130px; */
 }
 .beranda .beranda__first p {
   color: var(--clr-text);
 }
 .beranda .beranda__first h4 {
-  /* padding: 1rem 0rem 2rem 0rem; */
   color: var(--clr-blk);
   font-size: 2rem;
 }
-/* .beranda .beranda__first .search-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.beranda .beranda__first .search-container input[type="text"] {
-  width: 300px;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 2px solid #ccc;
-  border-radius: 5px;
-}
-.beranda .beranda__first .search-container .pencarian {
-  display: flex;
-  padding-top: 10px;
-}
-.beranda .beranda__first .search-container .pencarian p {
-  text-align: center;
-  padding-top: 8px;
-}
-.beranda .beranda__first .search-container .pencarian.searching {
-  padding: 10px 20px;
-  background-color: var(--clr-wth);
-  color: 2px solid #ccc;
-  border: 2px solid #ccc;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.beranda .beranda__first .search-container .search-btn {
-  padding: 10px 20px;
-  background-color: var(--clr-wth);
-  color: 2px solid #ccc;
-  border: 2px solid #ccc;
-  border-radius: 5px;
-  cursor: pointer;
-  /* display:grid; 
-}
-.beranda .beranda__first .search-container .search-btn:hover {
-  background-color: var(--clr-ijo);
-  color: var(--clr-wth);
-  border: none;
-}
-
-.beranda .beranda__first .search-container .search-options {
-  display: flex;
-}
-
-.beranda .beranda__first .search-container .search-options .option-btn {
-  padding: 10px 20px;
-  margin: 0 5px;
-  background-color: var(--clr-am);
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.beranda .beranda__first .search-container .search-options .option-btn:hover {
-  background-color: var(--clr-ijo);
-  color: var(--clr-wth);
-  border: none;
-} */
 
 /* ---------------------- Beranda Artikel ------------------------ */
 .beranda-artikel {
@@ -371,26 +295,6 @@ hr {
   width: 100%;
   height: 100%;
 }
-.search-container {
-  display: inline-flex;
-  align-items: center;
-  background-color: #f0f0f0;
-  border-radius: 20px;
-  border: 2px solid #cccccc;
-  width: 350px;
-  /* padding: 5px; */
-  /* margin-top: 10px; */
-}
-.search-section .search-container input {
-  border-radius: 0.3rem;
-  border: none;
-  background: none;
-  outline: none;
-  padding-left: 30px;
-  font-size: 16px;
-  flex: 1;
-  color: var(--clr-blk);
-}
 .search-section button {
   padding: 15px 20px;
   background-color: #4caf50;
@@ -400,14 +304,6 @@ hr {
   text-align: center;
   margin-left: 10px; /* Menambahkan jarak antara input dan button */
   cursor: pointer;
-}
-.search-section .search-container button:hover {
-  background-color: #45a049;
-}
-.search-section .search-container i {
-  color: #aaa;
-  margin-left: 10px;
-  margin-right: 5px;
 }
 .pelayanan-dokter .dokter-card {
   background: var(--clr-am);
@@ -469,7 +365,7 @@ hr {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 1rem 0rem 0rem 0rem;
+  padding: 3rem 0rem;
   grid-template-columns: repeat(3, 1fr);
   background: var(--clr-bm);
   gap: 15rem;
@@ -548,7 +444,7 @@ hr {
 .news .isi {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  padding: 5rem 3rem 4rem 3rem;
+  padding: 4rem 3rem;
   text-align: center;
   gap: 1rem;
 }
@@ -566,7 +462,6 @@ hr {
 .news .isi .news_eight a,
 .news .isi .news_nine a {
   font-size: 15px;
-  padding: 15px 35px;
   color: var(--clr-blk);
   text-decoration: none;
 }
@@ -581,7 +476,7 @@ hr {
 .news .isi .news_nine img {
   width: 380px;
   height: 286px;
-  padding-bottom: 10px;
+  padding-top: 20px;
   transition: all 0.4s;
 }
 .news .isi .news_one img:hover,
@@ -656,7 +551,7 @@ hr {
   );
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  padding: 4rem 3rem 4rem 3rem;
+  padding: 0rem 3rem 3rem;
   gap: 1rem;
 }
 .about__page .about_card{
@@ -664,7 +559,7 @@ hr {
   flex-direction: column;
   border-radius: 0.5rem;
   font-size: 15px;
-  padding: 5px 5px 5px 5px;
+  padding: 5px;
   gap: 15px;
   align-items: center;
   color: var(--clr-blk);
@@ -672,15 +567,15 @@ hr {
   
 }
 
-.about__page .about_card .button{
+/* .about__page .about_card .button{
   border: 1px;
   background: var(--clr-am);
-  padding: 10px 15px 10px 15px;
+  padding: 10px 15px;
   border-radius: 1rem;
   color: var(--clr-blk);
   font-weight: bold;
   text-decoration: none;
-}
+} */
 
 .about__page .about_card .button:hover{
   background: var(--clr-ijo);
@@ -797,7 +692,7 @@ hr {
 .profil-team .team {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  padding: 2rem 4rem;
+  /* padding: 2rem 4rem; */
 }
 .profil-team .team img {
   width: 80%;
@@ -1397,7 +1292,7 @@ footer p {
   display: none;
 }
 
-@media (max-width: 830px) {
+/* @media (max-width: 830px) {
   body {
     overflow-x: hidden;
   }
@@ -1499,6 +1394,10 @@ footer p {
   }
 }
 @media (max-width: 580px) {
+  .nav__bar .logo img {
+    width: 90px;
+    height: 50px;
+  }
   body {
     overflow-x: hidden;
   }
@@ -1531,5 +1430,334 @@ footer p {
   }
   .login .login__second button {
     margin: 1rem 10rem;
+  }
+} */
+ /* Media Queries */
+@media (max-width: 1200px) {
+  .beranda, .beranda-artikel {
+      grid-template-columns: 1fr;
+      padding: 10rem 2rem;
+  }
+
+  .profil-container {
+      flex-direction: column;
+  }
+
+  .profil-container .sidebar {
+      width: 100%;
+      height: auto;
+  }
+
+  .profil-container .content {
+      width: 100%;
+  }
+
+  .nav__bar ul {
+      gap: 1rem;
+  }
+  .pelayanan-dokter,
+  .news .isi,
+  .dokter .dokter-beranda {
+      grid-template-columns: repeat(2, 1fr);
+  }
+
+  .jumlah-dokter {
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      padding: 1rem 0;
+  }
+
+  .about {
+      grid-template-columns: 1fr;
+      padding: 3rem 2rem;
+  }
+  .about__page {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0rem 2rem 2rem;
+  }
+  .doctor {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem 4rem;
+  }
+  .about-hanimal {
+    grid-template-columns: 1fr;
+    padding: 1rem 4rem;
+  }
+  .profil-team .team {
+    grid-template-columns: repeat(3, 1fr);
+    /* padding: 2rem 2rem; */
+  }
+  .login {
+    grid-template-columns: 1fr;
+    padding: 1rem 4rem;
+  }
+  .logo-login {
+    padding: 1rem 4rem;
+  }
+  .head img {
+    padding: 0.3rem 5rem;
+  }
+  .head h2 {
+    padding: 1rem 10rem 2rem 10rem;
+  }
+  .head form {
+    padding: 0 10rem;
+  }
+  .pembayaran {
+    padding: 1rem 5rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  .pembayaran .container {
+    width: 80%;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-box {
+      padding: 15px;
+      max-width: 90%;
+  }
+
+  .nav__bar, .nav__bar-profil {
+      flex-direction: column;
+      height: auto;
+      padding: 1rem;
+  }
+
+  .nav__bar ul {
+      flex-direction: column;
+      gap: 0.5rem;
+  }
+
+  .profil-container {
+      margin: 10px;
+  }
+
+  .profil-container .sidebar {
+      padding: 15px;
+  }
+
+  .profil-container .content {
+      padding: 15px;
+  }
+
+  .buttons {
+      flex-direction: column;
+      gap: 5px;
+  }
+
+  button {
+      padding: 8px;
+      font-size: 14px;
+  }
+
+  .beranda, .beranda-artikel {
+      padding: 8rem 1rem;
+  }
+  .pelayanan-dokter,
+  .news .isi,
+  .dokter .dokter-beranda {
+      grid-template-columns: 1fr;
+  }
+
+  .beranda,
+  .beranda-artikel {
+      grid-template-columns: 1fr;
+      padding: 2rem;
+  }
+
+  .jumlah-dokter h2,
+  .jumlah-dokter p {
+      font-size: 1.5rem;
+  }
+
+  .about {
+      padding: 2rem 1rem;
+  }
+
+  .main-content img {
+      width: 100px;
+  }
+
+  .main-content .profil-dokter {
+      padding-left: 0;
+  }
+  .about__page {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0rem 1rem 1rem;
+  }
+  .doctor {
+    grid-template-columns: 1fr;
+    padding: 1rem 2rem;
+  }
+  .about-hanimal .gambar__first img,
+  .about-hanimal .gambar__second img {
+    width: 100%;
+    height: auto;
+  }
+  .profil-team .team {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem 1rem;
+  }
+  .login .login__first img {
+    width: 100%;
+    height: auto;
+  }
+  .login .login__second {
+    padding: 1rem;
+  }
+  .logo-login {
+    padding: 1rem 2rem;
+  }
+  .head img {
+    padding: 0.3rem 2rem;
+  }
+  .head h2 {
+    padding: 1rem 5rem 2rem 5rem;
+  }
+  .head form {
+    padding: 0 5rem;
+  }
+  .head a {
+    margin-left: 5rem;
+  }
+  .pembayaran {
+    padding: 1rem 2rem;
+  }
+  .pembayaran .container {
+    width: 90%;
+  }
+  .pembayaran-atm .halper {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    margin: 1rem;
+  }
+  .bottom {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+  .bottom .bottom__one ul li,
+  .bottom .bottom__two ul li,
+  .bottom .bottom__three ul li {
+    padding-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav__bar .logo img {
+    width: 90px;
+    height: 30px;
+  }
+  .nav__bar, .nav__bar-profil {
+      padding: 0.5rem;
+  }
+
+  .nav__bar ul {
+      gap: 0.25rem;
+  }
+
+  .profil-container {
+      margin: 5px;
+  }
+
+  .profil-container .sidebar {
+      padding: 10px;
+  }
+
+  .profil-container .content {
+      padding: 10px;
+  }
+
+  button {
+      padding: 6px;
+      font-size: 12px;
+  }
+
+  .beranda, .beranda-artikel {
+      padding: 5rem 0.5rem;
+  }
+
+  .main-content {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .main-content img {
+      width: 100px;
+  }
+
+  .main-content .profil-dokter {
+      padding-left: 0;
+      text-align: center;
+  }
+  .breadcrumb-container {
+    font-size: 16px;
+  }
+
+  .jumlah-dokter h2,
+  .jumlah-dokter p {
+      font-size: 1rem;
+  }
+
+  .about__top h2 {
+      font-size: 2em;
+  }
+
+  .about .about__second h4 {
+      font-size: 1.5rem;
+  }
+
+  .main-content img {
+      width: 80px;
+  }
+  .about__page {
+    grid-template-columns: 1fr;
+    padding: 0rem 1rem 1rem;
+  }
+  .profil-team .team {
+    grid-template-columns: 1fr;
+  }
+  .login {
+    padding: 1rem;
+  }
+  .logo-login {
+    padding: 1rem;
+  }
+  .head img {
+    padding: 0.3rem 1rem;
+  }
+  .head h2 {
+    padding: 1rem 2rem 2rem 2rem;
+    text-align: center;
+  }
+  .head form {
+    padding: 0 1rem;
+  }
+  .head a {
+    margin-left: 0;
+    display: block;
+    text-align: center;
+  }
+  .head button {
+    margin: 1rem 0;
+  }
+  .akun {
+    padding: 1rem;
+  }
+  .pembayaran {
+    padding: 1rem;
+  }
+  .pembayaran .container {
+    width: 100%;
+    padding: 20px;
+  }
+  .bottom {
+    padding: 1rem 0.5rem;
+  }
+  footer img, footer p {
+    padding: 1rem;
   }
 }
