@@ -223,18 +223,18 @@ hr {
   background-position: bottom;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  padding: 8rem 8rem 6.6rem 5rem;
+  padding: 16.1rem 5rem;
   /* padding-top: 130px; */
 }
 .beranda .beranda__first p {
   color: var(--clr-text);
 }
 .beranda .beranda__first h4 {
-  padding: 1rem 0rem 2rem 0rem;
+  /* padding: 1rem 0rem 2rem 0rem; */
   color: var(--clr-blk);
   font-size: 2rem;
 }
-.beranda .beranda__first .search-container {
+/* .beranda .beranda__first .search-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -270,7 +270,7 @@ hr {
   border: 2px solid #ccc;
   border-radius: 5px;
   cursor: pointer;
-  /* display:grid; */
+  /* display:grid; 
 }
 .beranda .beranda__first .search-container .search-btn:hover {
   background-color: var(--clr-ijo);
@@ -294,7 +294,7 @@ hr {
   background-color: var(--clr-ijo);
   color: var(--clr-wth);
   border: none;
-}
+} */
 
 /* ---------------------- Beranda Artikel ------------------------ */
 .beranda-artikel {
