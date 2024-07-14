@@ -217,7 +217,7 @@ hr {
 }
 .beranda .beranda__first h4 {
   color: var(--clr-blk);
-  font-size: 2rem;
+  font-size: 2vw;
 }
 
 /* ---------------------- Beranda Artikel ------------------------ */
