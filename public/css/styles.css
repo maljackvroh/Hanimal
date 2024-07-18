@@ -213,7 +213,7 @@ hr {
   padding: 15.2rem 0 0 5rem;
 }
 .beranda .beranda__first p {
-  color: var(--clr-text);
+  color: var(--clr-text); 
 }
 .beranda .beranda__first h4 {
   color: var(--clr-blk);
