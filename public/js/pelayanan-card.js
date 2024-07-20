@@ -1,6 +1,6 @@
 async function fetchDoctors() {
   try {
-    const response = await fetch("http://hanimal.online:3000/doctor");
+    const response = await fetch("http://localhost:3000/doctor");
     const doctors = await response.json();
     const container = document.getElementById("doctor-container");
     doctors.forEach((doctor) => {
