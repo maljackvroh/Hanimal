@@ -369,7 +369,7 @@ hr {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 3rem 0rem;
+  padding: 3rem 0;
   grid-template-columns: repeat(3, 1fr);
   background: var(--clr-bm);
   gap: 15rem;
