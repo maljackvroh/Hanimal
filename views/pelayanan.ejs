@@ -42,6 +42,19 @@
   
 </div>
 <script>
+  const fallbackImages = [
+    '../images/doktor-1.png',
+    '../images/doktor-2.png',
+    '../images/doktor-3.png',
+    '../images/doktor-4.png',
+    '../images/doktor-5.png'
+  ];
+
+  function getRandomFallbackImage() {
+    const randomIndex = Math.floor(Math.random() * fallbackImages.length);
+    return fallbackImages[randomIndex];
+  }
+
   async function fetchDoctors() {
     try {
         const response = await fetch('http://localhost:3000/doctor');
@@ -52,7 +65,7 @@
             card.className = 'card';
             card.innerHTML = `
                 <div class="doctor-image">
-                  <img src="${doctor.image || '../images/profile.png'}" alt="${doctor.username}">
+                  <img src="${doctor.image || getRandomFallbackImage()}" alt="${doctor.username}">
                 </div>
                 <div class="card-info">
                   <h2>${doctor.username}</h2>
