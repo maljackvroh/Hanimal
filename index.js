@@ -5,7 +5,6 @@ import cors from "cors";
 import UserRoute from "./routes/user_routes.js";
 import DoctorRoute from "./routes/doctor_routes.js";
 import AuthRoute from "./routes/auth_routes.js";
-// import invoiceRoute from "./routes/invoice_routes.js";
 import SequelizeStore from 'connect-session-sequelize';
 import session  from "express-session";
 import { fileURLToPath } from "url";
@@ -25,7 +24,7 @@ app.use(session({
     resave: false,
     cookie: {
         secure: false,
-        maxAge: 30 * 60 * 1000
+        maxAge: 360 * 60 * 1000
     }
 }));
 
@@ -80,11 +79,15 @@ app.get('/cara_bayar', (req, res) => {
 });
 
 app.get('/dashboard_admin', (req, res) => {
+    const admin = req.session.admin;
     res.render('dashboard_admin');
 });
 
 app.get('/dashboard_doctor', (req, res) => {
     const doctor = req.session.doctor;
+    if(!doctor){
+        return res.redirect('login_doctor');
+    }
     res.render('dashboard_doctor', {doctor});
 });
 
@@ -93,7 +96,7 @@ app.get('/logout', (req, res) => {
         if (err) {
             console.log(err);
         } else {
-            res.redirect('homepage'); // Redirect to login page after logout
+            res.redirect('/');
         }
     });
 });
@@ -142,7 +145,7 @@ app.get('/home', (req, res) => {
     res.render('home');
 });
 
-app.get('/homepage', (req, res) => {
+app.get('/', (req, res) => {
     res.render('homepage');
 });
 

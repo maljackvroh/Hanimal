@@ -37,11 +37,11 @@
 </div>
 <script>
   const fallbackImages = [
-    '../images/doktor-1.png',
-    '../images/doktor-2.png',
-    '../images/doktor-3.png',
-    '../images/doktor-4.png',
-    '../images/doktor-5.png'
+    '../images/doctor-1.png',
+    '../images/doctor-2.png',
+    '../images/doctor-3.png',
+    '../images/doctor-4.png',
+    '../images/doctor-5.png'
   ];
 
   function getRandomFallbackImage() {
@@ -51,15 +51,17 @@
 
   async function fetchDoctors() {
     try {
-        const response = await fetch('http://hanimal.online:3000/doctor');
+        const response = await fetch('http://localhost:3000/doctor');
         const doctors = await response.json();
         const container = document.getElementById('doctor-container');
         doctors.forEach(doctor => {
             const card = document.createElement('div');
             card.className = 'card';
+            const imageSrc = doctor.image || getRandomFallbackImage();
+            console.log(`Doctor ${doctor.username} image source:`, imageSrc);
             card.innerHTML = `
                 <div class="doctor-image">
-                  <img src="${doctor.image || getRandomFallbackImage()}" alt="${doctor.username}">
+                  <img src="${imageSrc}" alt="${doctor.username}">
                 </div>
                 <div class="card-info">
                   <h2>${doctor.username}</h2>
@@ -77,6 +79,7 @@
         console.error('Error fetching doctors:', error);
     }
 }
+
 
 function redirectToProfile(username) {
     window.location.href = `/profile?username=${username}`;

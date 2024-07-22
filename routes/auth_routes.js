@@ -87,7 +87,7 @@ router.get('/logout_doctor', (req, res) => {
             return res.redirect('/');
         }
         res.clearCookie('connect.sid');
-        res.redirect('/homepage');
+        res.redirect('/');
     });
 });
 
