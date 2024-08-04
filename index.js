@@ -96,7 +96,7 @@ app.get('/logout', (req, res) => {
         if (err) {
             console.log(err);
         } else {
-            res.redirect('/');
+            res.redirect('/homepage');
         }
     });
 });
@@ -145,7 +145,7 @@ app.get('/home', (req, res) => {
     res.render('home');
 });
 
-app.get('/', (req, res) => {
+app.get('/homepage', (req, res) => {
     res.render('homepage');
 });
 
